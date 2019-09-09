@@ -14,9 +14,16 @@
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/','HomeController@index');
+Route::match(['get', 'post'], '/', ['as' => '/', 'uses' => 'frontend\HomeController@index']);
 Route::match(['get', 'post'], 'admin-login', ['as' => 'admin-login', 'uses' => 'admin\LoginController@login']);
+
 Route::match(['get', 'post'], 'register', ['as' => 'register', 'uses' => 'admin\LoginController@register']);
 Route::match(['get', 'post'], 'forgotpassword', ['as' => 'forgotpassword', 'uses' => 'admin\LoginController@forgotpassword']);
 
 Route::match(['get', 'post'], 'dashboard', ['as' => 'dashboard', 'uses' => 'admin\dashboard\DashboardController@dashboard']);
+
+Route::match(['get', 'post'], 'Add-New-Inventory', ['as' => 'newinventory', 'uses' => 'admin\inventory\InventoryController@newinventory']);
+Route::match(['get', 'post'], 'View-Inventory', ['as' => 'viewinventory', 'uses' => 'admin\inventory\InventoryController@viewinventory']);
+Route::match(['get', 'post'], 'Edit-Inventory/{id}', ['as' => 'editinventory', 'uses' => 'admin\inventory\InventoryController@editinventory']);
+Route::match(['get', 'post'], 'Delete-Inventory', ['as' => 'deleteinventory', 'uses' => 'admin\inventory\InventoryController@deleteinventory']);
+

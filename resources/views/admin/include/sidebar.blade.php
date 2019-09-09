@@ -11,7 +11,7 @@
                     <div class="user-panel">
                         <div class="row">
                             <div class="sidebar-userpic">
-                                <img src="{{ ('admin/assets/img/dp.jpg') }}" class="img-responsive" alt=""> </div>
+                                <img src="{{ url('admin/assets/img/dp.jpg') }}" class="img-responsive" alt=""> </div>
                         </div>
                         <div class="profile-usertitle">
                             <div class="sidebar-userpic-name"> John Deo </div>
@@ -37,23 +37,18 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link nav-toggle">
                         <i class="material-icons">business_center</i>
-                        <span class="title">Booking</span>
+                        <span class="title">Inventory</span>
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub-menu">
                         <li class="nav-item">
-                            <a href="new_booking.html" class="nav-link ">
-                                <span class="title">New Booking</span>
+                            <a href="{{ route('newinventory') }}" class="nav-link ">
+                                <span class="title">New Inventory</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="view_booking.html" class="nav-link ">
-                                <span class="title">View Booking</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="edit_booking.html" class="nav-link ">
-                                <span class="title">Edit Booking</span>
+                            <a href="{{ route('viewinventory') }}" class="nav-link ">
+                                <span class="title">View Inventory</span>
                             </a>
                         </li>
                     </ul>

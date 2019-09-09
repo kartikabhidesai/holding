@@ -12,12 +12,17 @@ class DashboardController extends Controller
     }
     public function dashboard(){
         
-        $data['title'] = 'login | holding';
+        $data['title'] = 'Dashboard | holding';
         $data['css'] = array();
         $data['plugincss'] = array();
         $data['pluginjs'] = array();
         $data['js'] = array();
-        $data['funinit'] = array(); 
+        $data['funinit'] = array();
+        $data['header'] = array(
+            'title' => 'Dashboard',
+            'breadcrumb' => array(
+                'Dashboard' => 'Dashboard'));
         return view('admin.pages.dashboard.dashboard',$data);
     }
+    
 }

@@ -18,4 +18,24 @@
     <script src="{{ url('admin/assets/plugins/morris/morris.min.js') }}" ></script>
     <script src="{{ url('admin/assets/plugins/morris/raphael-min.js') }}" ></script>
     <script src="{{ url('admin/assets/js/pages/chart/morris/morris_home_data.js') }}" ></script>
+    
     <!-- end js include path -->    
+    @if (!empty($js)) 
+    @foreach ($js as $value) 
+    <script src="{{ url('admin/assets/js/'.$value) }}" type="text/javascript"></script>
+    @endforeach
+    @endif
+    @if (!empty($pluginjs)) 
+    @foreach ($pluginjs as $value) 
+    <script src="{{ url('admin/assets/js/'.$value) }}" type="text/javascript"></script>
+    @endforeach
+    @endif
+    <script>
+        jQuery(document).ready(function() {
+        @if (!empty($funinit))
+                @foreach ($funinit as $value)
+        {{  $value }}
+        @endforeach
+                @endif
+        });
+    </script>

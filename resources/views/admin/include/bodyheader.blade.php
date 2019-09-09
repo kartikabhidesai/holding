@@ -111,7 +111,7 @@
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="assets/img/user/user3.jpg" class="img-circle" alt=""> </span>
+                                            <img src="{{ url('admin/assets/img/user/user3.jpg') }}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> John Deo </span>
                                             <span class="time">16 mins </span>
@@ -122,7 +122,7 @@
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="assets/img/user/user1.jpg" class="img-circle" alt=""> </span>
+                                            <img src="{{ url('admin/assets/img/user/user1.jpg') }}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> Rajesh </span>
                                             <span class="time">2 hrs </span>
@@ -133,7 +133,7 @@
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="assets/img/user/user8.jpg" class="img-circle" alt=""> </span>
+                                            <img src="{{ url('admin/assets/img/user/user8.jpg') }}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> Lina Smith </span>
                                             <span class="time">40 mins </span>
@@ -144,7 +144,7 @@
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="assets/img/user/user5.jpg" class="img-circle" alt=""> </span>
+                                            <img src="{{ url('admin/assets/img/user/user5.jpg') }}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> Jacob Ryan </span>
                                             <span class="time">46 mins </span>

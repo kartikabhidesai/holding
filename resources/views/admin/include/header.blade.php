@@ -27,4 +27,5 @@
     <link href="{{ url('admin/assets/css/theme-color.css') }}" rel="stylesheet" type="text/css" />
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ ('admin/assets/img/favicon.ico') }}" /> 
+    <style>.error{color:red}</style>
 </head>
