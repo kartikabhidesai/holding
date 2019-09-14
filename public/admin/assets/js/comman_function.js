@@ -328,11 +328,12 @@ function handleFormValidate(form, rules, submitCallback, showToaster) {
             this.defaultShowErrors(); // keep error messages next to each input element   
         },
         highlight: function (element) { // hightlight error inputs
-            $(element)
-                    .closest('.c-input, .form-control').addClass('has-error'); // set error class to the control group
-            
-            $(element).parent().parent().find('.select2').addClass('has-error');
-            
+//            $(element)
+//                    .closest(' .inputbox').addClass('has-error'); // set error class to the control group
+//            
+//            $(element).parent().parent().find('.select2').addClass('has-error');
+            $(element).parent().addClass('error')
+            $(element).parent().addClass('is-focused')
         },
         unhighlight: function (element) { // revert the change done by hightlight
             $(element)
@@ -342,9 +343,9 @@ function handleFormValidate(form, rules, submitCallback, showToaster) {
             label
                     .closest('.c-input, .form-control').removeClass('has-error'); // set success class to the control group
         },
-        errorPlacement: function (error, element) {
-            return true;
-        },
+//        errorPlacement: function (error, element) {
+//            return true;
+//        },
 
 //        messages: {
 //            firstname: "Enter your firstname",

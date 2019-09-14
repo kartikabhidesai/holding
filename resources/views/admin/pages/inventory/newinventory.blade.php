@@ -5,23 +5,13 @@
                 <div class="card-box">
                     <form method="post" id='addform'>{{ csrf_field() }}
                         <div class="card-head">
-                        <header>Add Room Booking</header>
-                        <button id = "panel-button" 
-                                class = "mdl-button mdl-js-button mdl-button--icon pull-right" 
-                                data-upgraded = ",MaterialButton">
-                            <i class = "material-icons">more_vert</i>
-                        </button>
-                        <ul class = "mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                            data-mdl-for = "panel-button">
-                            <li class = "mdl-menu__item"><i class="material-icons">assistant_photo</i>Action</li>
-                            <li class = "mdl-menu__item"><i class="material-icons">print</i>Another action</li>
-                            <li class = "mdl-menu__item"><i class="material-icons">favorite</i>Something else here</li>
-                        </ul>
+                        <header>Add Holding Booking</header>
                     </div>
                     <div class="card-body row">
                         <div class="col-lg-6 p-t-20"> 
-                            <div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class = "mdl-textfield__input" type = "text" id = "txtFirstName" name="firstname">
+                                          
+                            <div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded error">
+                                <input class = "mdl-textfield__input inputbox" type = "text" id = "txtFirstName" name="firstname">
                                 <label class = "mdl-textfield__label">First Name</label>
                             </div>
                         </div>
@@ -56,6 +46,14 @@
                             <div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
                                 <input class = "mdl-textfield__input" type = "text"  name="address">
                                 <label class = "mdl-textfield__label" >Address</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20"> 
+                            <div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <span class="input-group-addon btn btn-default btn-file">
+                                    <input type="file" name="holding_img"/>
+                                    <span class="fileinput-new">Select file</span>
+                                </span>
                             </div>
                         </div>
                         <div class="col-lg-12 p-t-20 text-center"> 

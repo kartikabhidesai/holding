@@ -17,17 +17,27 @@ class InventoryController extends Controller {
         if ($request->isMethod('post')) {
             $objCustomer = new Customer();
             $result = $objCustomer->addCustomer($request);
+            if ($result) {
+                $return['status'] = 'success';
+                $return['message'] = 'Record created successfully.';
+                $return['redirect'] = route('viewinventory');
+            } else {
+                $return['status'] = 'error';
+                $return['message'] = 'something will be wrong.';
+            }
+            echo json_encode($return);
+            exit;
         }
-        $data['title'] = 'Dashboard | holding';
+        $data['title'] = 'New Inventory | holding';
         $data['css'] = array();
         $data['plugincss'] = array();
         $data['pluginjs'] = array('jquery.validate.min.js');
-        $data['js'] = array('demo.js');
-        $data['funinit'] = array('Demo.init()');
+        $data['js'] = array('ajaxfileupload.js', 'jquery.form.min.js', 'inventory.js');
+        $data['funinit'] = array('Inventory.init()');
         $data['header'] = array(
             'title' => 'NewInventory',
             'breadcrumb' => array(
-                'Dashboard' => 'Dashboard',
+                'Dashboard' => 'dashboard',
                 'NewInventory' => 'newinventory'));
         return view('admin.pages.inventory.newinventory', $data);
     }
@@ -36,16 +46,16 @@ class InventoryController extends Controller {
 
         $objCustomer = new Customer();
         $data['result'] = $objCustomer->getCustomer();
-        $data['title'] = 'Dashboard | holding';
+        $data['title'] = 'View Inventory | holding';
         $data['css'] = array();
         $data['plugincss'] = array();
-        $data['pluginjs'] = array();
-        $data['js'] = array('demo.js');
-        $data['funinit'] = array('Demo.add()');
+        $data['pluginjs'] = array('jquery.validate.min.js');
+        $data['js'] = array('ajaxfileupload.js', 'jquery.form.min.js', 'inventory.js');
+        $data['funinit'] = array('Inventory.init()');
         $data['header'] = array(
             'title' => 'ViewInventory',
             'breadcrumb' => array(
-                'Dashboard' => 'Dashboard',
+                'Dashboard' => 'dashboard',
                 'ViewInventory' => 'viewinventory'));
         return view('admin.pages.inventory.viewinventory', $data);
     }
@@ -56,37 +66,45 @@ class InventoryController extends Controller {
             $objCustomer = new Customer();
             $result = $objCustomer->editInventory($request, $id);
         }
-        $data['title'] = 'update Incentory | dashiothemedemo';
+        $data['title'] = 'Edit Inventory | holding';
         $data['css'] = array();
         $data['plugincss'] = array();
-        $data['pluginjs'] = array();
-        $data['js'] = array('demo.js');
-        $data['funinit'] = array('Demo.init()');
+        $data['pluginjs'] = array('jquery.validate.min.js');
+        $data['js'] = array('inventory.js');
+        $data['funinit'] = array('Inventory.init()');
         $data['header'] = array(
             'title' => 'UpdateInventory',
             'breadcrumb' => array(
-                'Dashboard' => 'Dashboard',
+                'Dashboard' => 'dashboard',
                 'UpdateInventory' => 'updateinventory'));
         $objCustomer = new Customer();
         $data['result'] = $objCustomer->getCustomerDetail($request, $id);
         return view('admin.pages.inventory.updateinventory', $data);
     }
 
-    public function deleteinventory(Request $request) {
-        
-        $objCustomer = new Customer();
-        $result = $objCustomer->deleteInventory($request);
-        if ($result) {
-            $return['status'] = 'success';
-            $return['message'] = 'Record created successfully.';
-            $return['redirect'] = route('viewinventory');
-        } else {
-            $return['status'] = 'error';
-            $return['message'] = 'Record created successfully.';
-        }
+    public function inventoryajaxaction(Request $request) {
 
-        return json_encode($return);
-        exit();
+        $action = $request->input('action');
+        switch ($action) {
+            case 'deleteInventory':
+                $data = $request->input('data');
+                $objCustomer = new Customer();
+                $result = $objCustomer->deleteInventory($data);
+                if ($result) {
+                    $return['status'] = 'success';
+                    $return['message'] = 'Record deleted successfully.';
+                    $return['redirect'] = route('viewinventory');
+                } else {
+                    $return['status'] = 'error';
+                    $return['message'] = 'Record Not Deleted';
+                }
+
+                return json_encode($return);
+                break;
+            case 'deleteDemo':
+                $result = $this->deleteDemo($request->input('data'));
+                break;
+        }
     }
 
 }

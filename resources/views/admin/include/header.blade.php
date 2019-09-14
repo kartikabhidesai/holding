@@ -4,7 +4,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="description" content="Responsive Admin Template" />
     <meta name="author" content="SmartUniversity" />
-    <title>Spice Hotel | Bootstrap 4 Admin Dashboard Template + UI Kit</title>
+    <title>{{$title}}</title>
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
     
@@ -25,7 +25,11 @@
     <link href="{{ url('admin/assets/css/style.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ url('admin/assets/css/responsive.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ url('admin/assets/css/theme-color.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('admin/assets/css/toastr.min.css') }}" rel="stylesheet">
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ ('admin/assets/img/favicon.ico') }}" /> 
     <style>.error{color:red}</style>
+    <script>
+            var baseurl = "{{ asset('/') }}";
+    </script>
 </head>

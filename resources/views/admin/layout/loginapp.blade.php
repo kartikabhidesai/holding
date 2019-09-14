@@ -27,7 +27,7 @@
         <script src="{{ url('admin/assets/js/pages/extra_pages/login.js') }}" ></script>
         @if(!@empty($js))
           @foreach($js as $value)
-                  <script src="{{ url('js/'.$value) }}" type="text/javascript"></script>
+                  <script src="{{ url('admin/assets/js/'.$value) }}" type="text/javascript"></script>
           @endforeach
         @endif  
         <script>

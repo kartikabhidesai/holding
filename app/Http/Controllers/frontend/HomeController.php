@@ -13,7 +13,7 @@ class HomeController extends Controller
     }
     
     public function index(){
-        $data['title'] = 'Dashboard | holding';
+        $data['title'] = 'Welcome To Holding';
         $data['css'] = array();
         $data['plugincss'] = array();
         $data['pluginjs'] = array();

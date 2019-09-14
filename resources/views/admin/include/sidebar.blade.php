@@ -1,3 +1,6 @@
+@php
+$currRoute = Route::current()->getName();
+@endphp
 <div class="sidebar-container">
     <div class="sidemenu-container navbar-collapse collapse fixed-menu">
         <div id="remove-scroll">
@@ -27,14 +30,14 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item start active">
+                <li class="nav-item start {{ ($currRoute == 'dashboard')  ? 'active' : '' }}">
                     <a href="{{ route('dashboard') }}" class="nav-link nav-toggle">
                         <i class="material-icons">dashboard</i>
                         <span class="title">Dashboard</span>
                         <span class="selected"></span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ ($currRoute == 'inventory') || ($currRoute == 'newinventory') || ($currRoute == 'viewinventory')   ? 'active' : '' }}">
                     <a href="#" class="nav-link nav-toggle">
                         <i class="material-icons">business_center</i>
                         <span class="title">Inventory</span>

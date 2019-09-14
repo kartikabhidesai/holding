@@ -4,7 +4,7 @@
     <div class="col-md-12">
         <div class="card card-box">
             <div class="card-head">
-                <header>All Bookings</header>
+                <header>All Holding Bookings</header>
                 <div class="tools">
                     <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                     <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
@@ -20,27 +20,6 @@
                             </a>
                         </div>
                     </div>{{ csrf_field() }}
-                    <div class="col-md-6 col-sm-6 col-6">
-                        <div class="btn-group pull-right">
-                            <a class="btn deepPink-bgcolor  btn-outline dropdown-toggle" data-toggle="dropdown">Tools
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                            <ul class="dropdown-menu pull-right">
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fa fa-print"></i> Print </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fa fa-file-pdf-o"></i> Save as PDF </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fa fa-file-excel-o"></i> Export to Excel </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
                 <div class="table-scrollable">
                     <table class="table table-hover table-checkable order-column full-width" id="datatable">
@@ -61,7 +40,11 @@
                             @foreach($result as $value)
                             <tr class="odd gradeX">
                                 <td class="user-circle-img">
-                                    <img src="{{ url('admin/assets/img/user/user1.jpg') }}" alt="">
+                                    @if($value->holding_img != '' || $value->holding_img != NULL)
+                                    <img height="50px" width="50px" src="{{ url('/uploads/inventory/'.$value->holding_img) }}" alt="User's Profile Picture">
+                                    @else
+                                    <img src="{{ url('admin/assets/img/mega-img1.jpg') }}" alt="User's Profile Picture">
+                                    @endif
                                 </td>
                                 <td class="center">{{ $value->firstname }}</td>
                                 <td class="center">{{ $value->lastname }}</td>

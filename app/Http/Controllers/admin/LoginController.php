@@ -12,7 +12,6 @@ class LoginController extends Controller
     }
     
     public function login(){
-        
         $data['title'] = 'login | holding';
         $data['css'] = array();
         $data['plugincss'] = array();
@@ -28,7 +27,7 @@ class LoginController extends Controller
         $data['plugincss'] = array();
         $data['pluginjs'] = array();
         $data['js'] = array('login.js');
-        $data['funinit'] = array('Login.init()'); 
+        $data['funinit'] = array('Login.register()'); 
         return view('admin.pages.register',$data);
     }
     public function forgotpassword(){
@@ -38,7 +37,7 @@ class LoginController extends Controller
         $data['plugincss'] = array();
         $data['pluginjs'] = array();
         $data['js'] = array('login.js');
-        $data['funinit'] = array('Login.init()'); 
+        $data['funinit'] = array('Login.fpassword()'); 
         return view('admin.pages.forgotpassword',$data);
     }
 }

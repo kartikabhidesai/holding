@@ -4,25 +4,24 @@
             <div class="page-title">{{ $header['title'] }}</div>
         </div>
         <ol class="breadcrumb page-breadcrumb pull-right">
-           
-            <ul class="breadcrumb-title center">
-                    @php 
-                    $count = count($header['breadcrumb']); 
-                    $temp = 1;
-                    @endphp 
-                    @foreach($header['breadcrumb'] as $key => $value)
 
-                   @php $value = (empty($value)) ? 'javascript:;' : $value; @endphp
-                    @if($temp!=$count)
-                    <li class="fa fa-angle-right"><a href="{{ $value }}">{{ $key }}</a>
-                    </li>
-                    @else
-                    <li class="fa fa-angle-right">{{ $key }}
-                    </li>
-                    @endif
-                    @php $temp = $temp+1; @endphp
-                    @endforeach
-                </ul>
+            <div class="breadcrumb-title center">
+                @php 
+            $count = count($header['breadcrumb']); 
+            $temp = 1;
+            @endphp 
+            @foreach($header['breadcrumb'] as $key => $value)
+
+            @php $value = (empty($value)) ? 'javascript:;' : $value; @endphp
+            @if($temp!=$count)
+            <li><a href="{{ $value }}" class=""> @if($temp == 1)<i class="fa fa-home"></i>@endif {{ $key }} </a>
+            @else
+            <i class='fa fa-angle-right'></i><b class="active"> {{ $key }} </b></li>
+            @endif
+
+            @php $temp = $temp+1; @endphp
+            @endforeach
+            </div>
         </ol>
     </div>
 </div>
