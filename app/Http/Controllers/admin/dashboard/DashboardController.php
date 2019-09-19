@@ -4,14 +4,16 @@ namespace App\Http\Controllers\admin\dashboard;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Session;
 class DashboardController extends Controller
 {
     public function __construct() {
         
     }
-    public function dashboard(){
+    public function dashboard(Request $request){
         
+        $session = $request->session()->all();
+        $items = Session::get('logindata')[0];
         $data['title'] = 'Dashboard | holding';
         $data['css'] = array();
         $data['plugincss'] = array();

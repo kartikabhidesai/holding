@@ -36,4 +36,6 @@ Route::match(['get', 'post'], 'viewinventory', ['as' => 'viewinventory', 'uses' 
 Route::match(['get', 'post'], 'editinventory/{id}', ['as' => 'editinventory', 'uses' => 'admin\inventory\InventoryController@editinventory']);
 Route::match(['get', 'post'], 'inventory-ajax-action', ['as' => 'inventoryajaxaction', 'uses' => 'admin\inventory\InventoryController@inventoryajaxaction']);
 
+Route::match(['get', 'post'], 'logout', ['as' => 'logout', 'uses' => 'admin\LoginController@logout']);
+
 

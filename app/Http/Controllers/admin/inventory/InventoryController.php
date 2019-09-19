@@ -61,7 +61,7 @@ class InventoryController extends Controller {
     }
 
     public function editinventory(Request $request, $id) {
-
+        
         if ($request->isMethod('post')) {
             $objCustomer = new Customer();
             $result = $objCustomer->editInventory($request, $id);

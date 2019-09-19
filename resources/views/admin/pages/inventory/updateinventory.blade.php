@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="card-box">
-            <form method="post" id='addform'>@csrf 
+            <form method="post" id='addform' enctype="multipart/form-data">{{ csrf_field() }}
                 <div class="card-head">
                     <header>Edit Holding Booking</header>
                 </div>
@@ -56,7 +56,7 @@
                                     <img height="100px" width="100px" src="{{ url('/uploads/inventory/'.$result->holding_img) }}" alt="User's Profile Picture">
                                 </div>
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-lg-6 p-t-20"> 
                                 <div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
                                     <span class="input-group-addon btn btn-default btn-file">
                                         <input type="file" name="holding_img"/>

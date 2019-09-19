@@ -3,7 +3,7 @@
     <div class="limiter">
 		<div class="container-login100 page-background">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" id="addagenciesform" action="{{ route('register') }}" method="post">{{ csrf_field() }}
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-flower"></i>
 					</span>
@@ -12,26 +12,38 @@
 					</span>
 					<div class="row">
 					<div class="col-lg-6 p-t-20">
-					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="username" placeholder="Username">
+					<div class="wrap-input100" >
+						<input class="input100" type="text" name="fname" placeholder="Enter First Name">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
+					</div>
+                                        <div class="col-lg-6 p-t-20">
+					<div class="wrap-input100" data-validate = "lastname">
+						<input class="input100" type="text" name="lname" placeholder="Enter Last Name">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
+					</div>
+                                        <div class="col-lg-6 p-t-20">
+					<div class="wrap-input100" data-validate = "mobile">
+						<input class="input100" type="text" name="mobile" placeholder="Enter Mobile">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 					</div>
 					<div class="col-lg-6 p-t-20">
-					<div class="wrap-input100 validate-input" data-validate = "Enter email">
+					<div class="wrap-input100" data-validate = "Enter email">
 						<input class="input100" type="email" name="email" placeholder="Email">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 					</div>
 					<div class="col-lg-6 p-t-20">
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+					<div class="wrap-input100" data-validate="Enter password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 					</div>
 					<div class="col-lg-6 p-t-20">
-					<div class="wrap-input100 validate-input" data-validate="Enter password again">
-						<input class="input100" type="password" name="pass2" placeholder="Confirm password">
+					<div class="wrap-input100" data-validate="Enter password again">
+						<input class="input100" type="password" name="con_password" placeholder="Confirm password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 					</div>

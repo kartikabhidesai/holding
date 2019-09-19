@@ -282,12 +282,16 @@ function handleAjaxResponse(output) {
     output = JSON.parse(output);
 
     if (output.message != '') {
-
         showToster(output.status, output.message, '');
     }
     if (typeof output.redirect !== 'undefined' && output.redirect != '') {
         setTimeout(function () {
             window.location.href = output.redirect;
+        }, 4000);
+    }
+    if (typeof output.reload !== 'undefined' && output.redirect != '') {
+        setTimeout(function () {
+            window.location.href = location.reload();
         }, 4000);
     }
     if (typeof output.jscode !== 'undefined' && output.jscode != '') {

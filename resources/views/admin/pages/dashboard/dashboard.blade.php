@@ -454,7 +454,7 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-8">
                                             <div class="prog-avatar">
-                                                <img src="{{ url('admin/ssets/img/user/user1.jpg') }}" alt="" width="40" height="40">
+                                                <img src="{{ url('admin/assets/img/user/user1.jpg') }}" alt="" width="40" height="40">
                                             </div>
                                             <div class="details">
                                                 <div class="title">

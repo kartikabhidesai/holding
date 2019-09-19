@@ -1,5 +1,6 @@
 @php
 $currRoute = Route::current()->getName();
+$items = Session::get('logindata');
 @endphp
 <div class="sidebar-container">
     <div class="sidemenu-container navbar-collapse collapse fixed-menu">
@@ -17,14 +18,15 @@ $currRoute = Route::current()->getName();
                                 <img src="{{ url('admin/assets/img/dp.jpg') }}" class="img-responsive" alt=""> </div>
                         </div>
                         <div class="profile-usertitle">
-                            <div class="sidebar-userpic-name"> John Deo </div>
+                            <div class="sidebar-userpic-name">{{ "welcome" }}</div>
+                            <div class="sidebar-userpic-name">{{ $items[0]['fname'] }}</div>
                             <div class="profile-usertitle-job"> Manager </div>
                         </div>
                         <div class="sidebar-userpic-btn">
                             <a class="tooltips" href="{{ route('dashboard') }}" data-placement="top" data-original-title="Profile">
                                 <i class="material-icons">person_outline</i>
                             </a>
-                            <a class="tooltips" href="{{ route('admin-login') }}" data-placement="top" data-original-title="Logout">
+                            <a class="tooltips" href="{{ route('logout') }}" data-placement="top" data-original-title="Logout">
                                 <i class="material-icons">input</i>
                             </a>
                         </div>

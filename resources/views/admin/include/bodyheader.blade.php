@@ -1,3 +1,6 @@
+@php 
+$items = Session::get('logindata');
+@endphp
 <div class="page-header navbar navbar-fixed-top">
     <div class="page-header-inner ">
         <!-- logo start -->
@@ -163,8 +166,8 @@
                 <!-- start manage user dropdown -->
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                        <img alt="" class="img-circle " src="{{ ('admin/assets/img/dp.jpg') }}" />
-                        <span class="username username-hide-on-mobile"> John </span>
+                        <img alt="" class="img-circle " src="{{ url('admin/assets/img/dp.jpg') }}" />
+                        <span class="username username-hide-on-mobile"> {{ $items[0]['fname'] }} </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default animated jello">
@@ -174,7 +177,7 @@
                         </li>
                         
                         <li>
-                            <a href="{{ route('admin-login') }}">
+                            <a href="{{ route('logout') }}">
                                 <i class="icon-logout"></i> Log Out </a>
                         </li>
                     </ul>

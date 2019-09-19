@@ -17,9 +17,9 @@
     <!-- morris chart -->
     
     <script src="{{ url('admin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}" ></script>
-    <script src="{{ url('admin/assets/js/comman_function.js') }}" ></script>
     
-    <script src="{{ url('admin/assets/js/toastr.min.js') }}" type="text/javascript"></script>
+    
+    
     
     <!-- end js include path -->    
     
@@ -33,6 +33,10 @@
     <script src="{{ url('admin/assets/js/'.$value) }}" type="text/javascript"></script>
     @endforeach
     @endif
+    
+    <script src="{{ url('admin/assets/js/toastr.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url('admin/assets/js/comman_function.js') }}" ></script>
+    
     <script>
         jQuery(document).ready(function() {
         @if (!empty($funinit))

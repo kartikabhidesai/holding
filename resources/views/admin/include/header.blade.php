@@ -27,7 +27,7 @@
     <link href="{{ url('admin/assets/css/theme-color.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ url('admin/assets/css/toastr.min.css') }}" rel="stylesheet">
     <!-- favicon -->
-    <link rel="shortcut icon" href="{{ ('admin/assets/img/favicon.ico') }}" /> 
+    <link rel="shortcut icon" href="{{ url('admin/assets/img/favicon.ico') }}" /> 
     <style>.error{color:red}</style>
     <script>
             var baseurl = "{{ asset('/') }}";
