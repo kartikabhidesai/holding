@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('fname');
             $table->string('lname');
-            $table->integer('mobile');
+            $table->string('mobile');
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('user_type', ['ADMIN', 'AGENCIES','USER']);

@@ -17,7 +17,7 @@ class CreateCustomerTable extends Migration
             $table->bigIncrements('id');
             $table->string('fname');
             $table->string('lname');
-            $table->integer('mobile');
+            $table->string('mobile');
             $table->string('email');
             $table->string('city');
             $table->string('address');
