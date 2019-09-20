@@ -21,7 +21,6 @@ class Customer extends Model
             $image->move($destinationPath, $name);    
         }
        $objCustomer=  new Customer();
-       $objCustomer->user_id = '1';
        $objCustomer->firstname = $request->input('firstname');
        $objCustomer->lastname = $request->input('lastname');
        $objCustomer->email = $request->input('email');
