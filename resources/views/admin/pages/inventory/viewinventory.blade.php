@@ -4,7 +4,7 @@
     <div class="col-md-12">
         <div class="card card-box">
             <div class="card-head">
-                <header>All Holding Bookings</header>
+                <header>Inventory List</header>
                 <div class="tools">
                     <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                     <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
@@ -15,7 +15,7 @@
                 <div class="row p-b-20">
                     <div class="col-md-6 col-sm-6 col-6">
                         <div class="btn-group">
-                            <a href="{{ route('newinventory') }}" id="addRow" class="btn btn-info">
+                            <a href="{{ route('Inventory') }}" id="addRow" class="btn btn-info">
                                 Add New <i class="fa fa-plus"></i>
                             </a>
                         </div>
@@ -53,7 +53,7 @@
                                 <td class="center">{{ $value->city }}</td>
                                 <td class="center">{{ $value->address }}</td>
                                 <td class="center">
-                                    <a href="{{ route('editinventory',$value->id) }}" class="btn btn-tbl-edit btn-xs">
+                                    <a href="{{ route('Update-Inventory',$value->id) }}" class="btn btn-tbl-edit btn-xs">
                                         <i class="fa fa-pencil"></i>
                                     </a>
                                 </td>

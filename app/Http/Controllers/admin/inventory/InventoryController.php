@@ -35,10 +35,10 @@ class InventoryController extends Controller {
         $data['js'] = array('ajaxfileupload.js', 'jquery.form.min.js', 'inventory.js');
         $data['funinit'] = array('Inventory.init()');
         $data['header'] = array(
-            'title' => 'NewInventory',
+            'title' => 'Add New Inventory',
             'breadcrumb' => array(
                 'Dashboard' => 'dashboard',
-                'NewInventory' => 'newinventory'));
+                'Add New Inventory' => 'Inventory'));
         return view('admin.pages.inventory.newinventory', $data);
     }
 
@@ -53,10 +53,10 @@ class InventoryController extends Controller {
         $data['js'] = array('ajaxfileupload.js', 'jquery.form.min.js', 'inventory.js');
         $data['funinit'] = array('Inventory.init()');
         $data['header'] = array(
-            'title' => 'ViewInventory',
+            'title' => 'Inventory List',
             'breadcrumb' => array(
                 'Dashboard' => 'dashboard',
-                'ViewInventory' => 'viewinventory'));
+                'Inventory List' => 'viewinventory'));
         return view('admin.pages.inventory.viewinventory', $data);
     }
 
@@ -73,10 +73,10 @@ class InventoryController extends Controller {
         $data['js'] = array('inventory.js');
         $data['funinit'] = array('Inventory.init()');
         $data['header'] = array(
-            'title' => 'UpdateInventory',
+            'title' => 'Update Inventory',
             'breadcrumb' => array(
                 'Dashboard' => 'dashboard',
-                'UpdateInventory' => 'updateinventory'));
+                'Update Inventory' => 'updateinventory'));
         $objCustomer = new Customer();
         $data['result'] = $objCustomer->getCustomerDetail($request, $id);
         return view('admin.pages.inventory.updateinventory', $data);
@@ -93,7 +93,7 @@ class InventoryController extends Controller {
                 if ($result) {
                     $return['status'] = 'success';
                     $return['message'] = 'Record deleted successfully.';
-                    $return['redirect'] = route('viewinventory');
+                    $return['redirect'] = route('Inventory');
                 } else {
                     $return['status'] = 'error';
                     $return['message'] = 'Record Not Deleted';

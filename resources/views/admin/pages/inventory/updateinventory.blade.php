@@ -7,7 +7,7 @@
         <div class="card-box">
             <form method="post" id='addform' enctype="multipart/form-data">{{ csrf_field() }}
                 <div class="card-head">
-                    <header>Edit Holding Booking</header>
+                    <header>Update Inventory</header>
                 </div>
                 <div class="card-body row">
                     <div class="col-lg-6 p-t-20"> 

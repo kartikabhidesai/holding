@@ -39,7 +39,7 @@ $items = Session::get('logindata');
                         <span class="selected"></span>
                     </a>
                 </li>
-                <li class="nav-item {{ ($currRoute == 'inventory') || ($currRoute == 'newinventory') || ($currRoute == 'viewinventory')   ? 'active' : '' }}">
+                <li class="nav-item {{ ($currRoute == 'inventory') || ($currRoute == 'Inventory') || ($currRoute == 'Inventory-List')   ? 'active' : '' }}">
                     <a href="#" class="nav-link nav-toggle">
                         <i class="material-icons">business_center</i>
                         <span class="title">Inventory</span>
@@ -47,13 +47,13 @@ $items = Session::get('logindata');
                     </a>
                     <ul class="sub-menu">
                         <li class="nav-item">
-                            <a href="{{ route('newinventory') }}" class="nav-link ">
-                                <span class="title">New Inventory</span>
+                            <a href="{{ route('Inventory') }}" class="nav-link ">
+                                <span class="title">Add New Inventory</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('viewinventory') }}" class="nav-link ">
-                                <span class="title">View Inventory</span>
+                            <a href="{{ route('Inventory-List') }}" class="nav-link ">
+                                <span class="title">Inventory List</span>
                             </a>
                         </li>
                     </ul>

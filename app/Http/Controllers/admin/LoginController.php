@@ -22,19 +22,7 @@ class LoginController extends Controller {
 
 
         if ($request->isMethod('post')) {
-            if (Auth::guard('admin')->attempt(['email' => $request->input('email'), 'password' => $request->input('password'), 'user_type' => 'ADMIN'])) {
-               
-                $loginData = array(
-                    'fname' => Auth::guard()->user()->fname,
-                    'lname' => Auth::guard()->user()->lname,
-                    'mobile' => Auth::guard()->user()->mobile,
-                    'email' => Auth::guard()->user()->email,
-                    'id' => Auth::guard()->user()->id,
-                    'user_type' => Auth::guard()->user()->user_type,
-                );
-                Session::push('logindata', $loginData);
-                return redirect('dashboard');
-            } else if (Auth::guard('agencies')->attempt(['email' => $request->input('email'), 'password' => $request->input('password'), 'user_type' => 'AGENCIES'])) {
+            if (Auth::guard('agencies')->attempt(['email' => $request->input('email'), 'password' => $request->input('password'), 'user_type' => 'AGENCIES'])) {
                 
                 $loginData = array(
                     'fname' => Auth::guard('agencies')->user()->fname,
@@ -69,7 +57,7 @@ class LoginController extends Controller {
             if ($bojUser) {
                 $return['status'] = 'success';
                 $return['message'] = "Agency added Successfully!";
-                $return['redirect'] = route('register');
+                $return['redirect'] = route('admin-login');
             } else {
                 $return['status'] = 'error';
                 $return['message'] = "Something went wrong!";
@@ -100,14 +88,13 @@ class LoginController extends Controller {
     }
 
     public function logout(Request $request) {
-
+        
         $this->resetGuard();
         return redirect()->route('admin-login');
     }
     public function resetGuard() {
         Auth::logout();
         Auth::guard('agencies')->logout();
-        Auth::guard('admin')->logout();
         Session::forget('logindata');
     }
 
