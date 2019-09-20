@@ -65,8 +65,8 @@ class Customer extends Model
             $result->holding_img = $name;
         }
         
-        $result->firstname = $request->input('firstname');
-        $result->lastname = $request->input('lastname');
+        $result->fname = $request->input('fname');
+        $result->lname = $request->input('lname');
         $result->email = $request->input('email');;
         $result->mobile = $request->input('mobile');
         $result->city = $request->input('city');;

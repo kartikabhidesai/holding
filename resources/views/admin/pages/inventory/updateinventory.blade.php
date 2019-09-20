@@ -12,13 +12,13 @@
                 <div class="card-body row">
                     <div class="col-lg-6 p-t-20"> 
                         <div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                            <input class = "mdl-textfield__input" type = "text" id = "txtFirstName" name="firstname" value="{{ $result->firstname }}">
+                            <input class = "mdl-textfield__input" type = "text" id = "txtFirstName" name="fname" value="{{ $result->fname }}">
                             <label class = "mdl-textfield__label">First Name</label>
                         </div>
                     </div>
                     <div class="col-lg-6 p-t-20"> 
                         <div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                            <input class = "mdl-textfield__input" type = "text" id = "txtLasttName" name="lastname" value="{{ $result->lastname }}">
+                            <input class = "mdl-textfield__input" type = "text" id = "txtLasttName" name="lname" value="{{ $result->lname }}">
                             <label class = "mdl-textfield__label" >Last Name</label>
                         </div>
                     </div>

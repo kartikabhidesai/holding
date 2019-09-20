@@ -20,7 +20,7 @@ class InventoryController extends Controller {
             if ($result) {
                 $return['status'] = 'success';
                 $return['message'] = 'Record created successfully.';
-                $return['redirect'] = route('viewinventory');
+                $return['redirect'] = route('Inventory-List');
             } else {
                 $return['status'] = 'error';
                 $return['message'] = 'something will be wrong.';
@@ -56,7 +56,7 @@ class InventoryController extends Controller {
             'title' => 'Inventory List',
             'breadcrumb' => array(
                 'Dashboard' => 'dashboard',
-                'Inventory List' => 'viewinventory'));
+                'Inventory List' => 'Inventory-List'));
         return view('admin.pages.inventory.viewinventory', $data);
     }
 
@@ -76,7 +76,7 @@ class InventoryController extends Controller {
             'title' => 'Update Inventory',
             'breadcrumb' => array(
                 'Dashboard' => 'dashboard',
-                'Update Inventory' => 'updateinventory'));
+                'Update Inventory' => 'Update-Inventory'));
         $objCustomer = new Customer();
         $data['result'] = $objCustomer->getCustomerDetail($request, $id);
         return view('admin.pages.inventory.updateinventory', $data);
@@ -93,7 +93,7 @@ class InventoryController extends Controller {
                 if ($result) {
                     $return['status'] = 'success';
                     $return['message'] = 'Record deleted successfully.';
-                    $return['redirect'] = route('Inventory');
+                    $return['redirect'] = route('Inventory-List');
                 } else {
                     $return['status'] = 'error';
                     $return['message'] = 'Record Not Deleted';
