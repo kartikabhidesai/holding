@@ -21,8 +21,8 @@ class Customer extends Model
             $image->move($destinationPath, $name);    
         }
        $objCustomer=  new Customer();
-       $objCustomer->firstname = $request->input('firstname');
-       $objCustomer->lastname = $request->input('lastname');
+       $objCustomer->fname = $request->input('fname');
+       $objCustomer->lname = $request->input('lname');
        $objCustomer->email = $request->input('email');
        $objCustomer->mobile = $request->input('mobile');
        $objCustomer->city = $request->input('city');
