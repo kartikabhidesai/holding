@@ -39,3 +39,8 @@ Route::match(['get', 'post'], 'inventory-ajax-action', ['as' => 'inventoryajaxac
 Route::match(['get', 'post'], 'logout', ['as' => 'logout', 'uses' => 'admin\LoginController@logout']);
 
 
+//agencies route
+Route::match(['get', 'post'], 'agencies-dashboard', ['as' => 'agencies-dashboard', 'uses' => 'agencies\AgenciesController@dashboard']);
+
+//user route
+Route::match(['get', 'post'], 'user-dashboard', ['as' => 'user-dashboard', 'uses' => 'user\UserController@dashboard']);

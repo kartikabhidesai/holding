@@ -14,9 +14,9 @@
 
             @php $value = (empty($value)) ? 'javascript:;' : $value; @endphp
             @if($temp!=$count)
-            <li><a href="{{ $value }}" class=""> @if($temp == 1)<i class="fa fa-home"></i>@endif {{ $key }} </a>
+            <li><a href="{{ route($value) }}" class=""> @if($temp == 1)<i class="fa fa-home"></i>@endif {{ $key }} {{ "/"}} </a>
             @else
-            <i class='fa fa-angle-right'></i><b class="active"> {{ $key }} </b></li>
+            <b class="active"> {{ $key }} </b></li>
             @endif
 
             @php $temp = $temp+1; @endphp

@@ -37,13 +37,13 @@
 					</div>
 					<div class="col-lg-6 p-t-20">
 					<div class="wrap-input100" data-validate="Enter password">
-						<input class="input100" type="password" name="password" placeholder="Password">
+						<input class="input100" type="password" name="password" id="password" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 					</div>
 					<div class="col-lg-6 p-t-20">
 					<div class="wrap-input100" data-validate="Enter password again">
-						<input class="input100" type="password" name="con_password" placeholder="Confirm password">
+						<input class="input100" type="password" name="confirmpassword" placeholder="Confirm password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 					</div>

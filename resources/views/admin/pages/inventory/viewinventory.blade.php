@@ -6,7 +6,7 @@
             <div class="card-head">
                 <header>Inventory List</header>
                 <div class="tools">
-                    <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                    <a hre="javascript:;" class="fa fa-repeat btn-color box-refresh" onClick="document.location.reload(true)"></a>
                     <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
                     <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
                 </div>
@@ -46,8 +46,8 @@
                                     <img  height="50px" width="50px" src="{{ url('admin/assets/img/mega-img1.jpg') }}" alt="User's Profile Picture">
                                     @endif
                                 </td>
-                                <td class="center">{{ $value->firstname }}</td>
-                                <td class="center">{{ $value->lastname }}</td>
+                                <td class="center">{{ $value->fname }}</td>
+                                <td class="center">{{ $value->lname }}</td>
                                 <td class="center">{{ $value->email }}</td>
                                 <td class="center">{{ $value->mobile }}</td>
                                 <td class="center">{{ $value->city }}</td>

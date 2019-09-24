@@ -46,9 +46,17 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin',
+        ],
         'agencies' => [
             'driver' => 'session',
-            'provider' => 'users'
+            'provider' => 'users',
+        ],
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
         ],
     ],
 

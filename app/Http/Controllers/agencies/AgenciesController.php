@@ -1,20 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\admin\dashboard;
+namespace App\Http\Controllers\agencies;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Session;
-class DashboardController extends Controller
+
+class AgenciesController extends Controller
 {
     public function __construct() {
         
     }
     public function dashboard(Request $request){
         
-        $session = $request->session()->all();
-        $items = Session::get('logindata')[0];
-        $data['title'] = 'Admin Dashboard | holding';
+        $data['title'] = 'Agencies Dashboard | holding';
         $data['css'] = array();
         $data['plugincss'] = array();
         $data['pluginjs'] = array();
@@ -24,7 +22,6 @@ class DashboardController extends Controller
             'title' => 'Dashboard',
             'breadcrumb' => array(
                 'Dashboard' => 'Dashboard'));
-        return view('admin.pages.dashboard.dashboard',$data);
+        return view('agencies.agencies-dashboard',$data);
     }
-    
 }

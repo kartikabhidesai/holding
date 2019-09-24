@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class Agencies
+class User
 {
     /**
      * Handle an incoming request.
@@ -13,7 +13,7 @@ class Agencies
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard="agencies")
+    public function handle($request, Closure $next, $guard="user")
     {   
         if(Auth::guard()->guest()){
             if ($request->ajax() || $request->wantsJson()) {

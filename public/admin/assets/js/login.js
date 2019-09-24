@@ -7,6 +7,7 @@ var Login = function () {
             email: {required: true, email: true},
             mobile: {required: true, maxlength: 10, minlength: 10},
             password: {required: true, maxlength: 10},
+            confirmpassword: {equalTo: "#password"},
         };
         handleFormValidate(form, rules, function (form) {
             handleAjaxFormSubmit(form);
