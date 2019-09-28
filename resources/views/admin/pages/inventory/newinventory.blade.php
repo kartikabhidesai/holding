@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="card-box">
-            <form method="post" id='addform'>{{ csrf_field() }}
+            <form method="post" id='addform' enctype="multipart/form-data">{{ csrf_field() }}
                 <div class="card-head">
                     <header>Add New Inventory</header>
                 </div>
