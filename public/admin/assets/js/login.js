@@ -22,7 +22,7 @@ var Login = function () {
                 password: {required: "Please Enter your Password"}
                 },
             submitHandler: function (form) {
-                form.submit();
+                handleAjaxFormSubmit(form);
             }
         });
     }

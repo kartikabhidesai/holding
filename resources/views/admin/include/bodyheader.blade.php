@@ -6,7 +6,7 @@ $items = Session::get('logindata');
         <!-- logo start -->
         <div class="page-logo">
             <a href="{{ route('dashboard') }}">
-                <img alt="" src="{{ url('admin/assets/img/logo.png') }}">
+                <img alt="" src="{{ url('public/admin/assets/img/logo.png') }}">
                 <span class="logo-default" >Spice</span> </a>
         </div>
         <!-- logo end -->
@@ -103,7 +103,7 @@ $items = Session::get('logindata');
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="{{ url('admin/assets/img/user/user2.jpg') }}" class="img-circle" alt=""> </span>
+                                            <img src="{{ url('public/admin/assets/img/user/user2.jpg') }}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> Sarah Smith </span>
                                             <span class="time">Just Now </span>
@@ -114,7 +114,7 @@ $items = Session::get('logindata');
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="{{ url('admin/assets/img/user/user3.jpg') }}" class="img-circle" alt=""> </span>
+                                            <img src="{{ url('public/admin/assets/img/user/user3.jpg') }}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> John Deo </span>
                                             <span class="time">16 mins </span>
@@ -125,7 +125,7 @@ $items = Session::get('logindata');
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="{{ url('admin/assets/img/user/user1.jpg') }}" class="img-circle" alt=""> </span>
+                                            <img src="{{ url('public/admin/assets/img/user/user1.jpg') }}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> Rajesh </span>
                                             <span class="time">2 hrs </span>
@@ -136,7 +136,7 @@ $items = Session::get('logindata');
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="{{ url('admin/assets/img/user/user8.jpg') }}" class="img-circle" alt=""> </span>
+                                            <img src="{{ url('public/admin/assets/img/user/user8.jpg') }}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> Lina Smith </span>
                                             <span class="time">40 mins </span>
@@ -147,7 +147,7 @@ $items = Session::get('logindata');
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="{{ url('admin/assets/img/user/user5.jpg') }}" class="img-circle" alt=""> </span>
+                                            <img src="{{ url('public/admin/assets/img/user/user5.jpg') }}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> Jacob Ryan </span>
                                             <span class="time">46 mins </span>
@@ -166,7 +166,7 @@ $items = Session::get('logindata');
                 <!-- start manage user dropdown -->
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                        <img alt="" class="img-circle " src="{{ url('admin/assets/img/dp.jpg') }}" />
+                        <img alt="" class="img-circle " src="{{ url('public/admin/assets/img/dp.jpg') }}" />
                         <span class="username username-hide-on-mobile"> {{ $items[0]['fname'] }} </span>
                         <i class="fa fa-angle-down"></i>
                     </a>

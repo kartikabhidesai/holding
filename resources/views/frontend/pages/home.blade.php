@@ -6,7 +6,7 @@
         <!--section -->
         <section class="hero-section" data-scrollax-parent="true" id="sec1">
             <div class="hero-parallax">
-                <div class="bg"  data-bg="{{ url('frontend/images/bg/22.jpg') }}" data-scrollax="properties: { translateY: '200px' }"></div>
+                <div class="bg"  data-bg="{{ url('public/frontend/images/bg/22.jpg') }}" data-scrollax="properties: { translateY: '200px' }"></div>
                 <div class="overlay op7"></div>
             </div>
             <div class="hero-section-wrap fl-wrap">
@@ -73,7 +73,7 @@
                     <div class="grid-item-holder">
                         <div class="listing-item-grid">
                             <div class="listing-counter"><span>79 </span> Hotels</div>
-                            <img  src="{{ url('frontend/images/city/7.jpg') }}"   alt="">
+                            <img  src="{{ url('public/frontend/images/city/7.jpg') }}"   alt="">
                             <div class="listing-item-cat">
                                 <h3><a href="listing.html">Rome</a></h3>
                                 <div class="weather-grid"   data-grcity="Rome"></div>
@@ -88,7 +88,7 @@
                 <div class="gallery-item gallery-item-second">
                     <div class="grid-item-holder">
                         <div class="listing-item-grid">
-                            <img  src="{{ url('frontend/images/city/3.jpg') }}"   alt="">
+                            <img  src="{{ url('public/frontend/images/city/3.jpg') }}"   alt="">
                             <div class="listing-counter"><span>43 </span> Hotels</div>
                             <div class="listing-item-cat">
                                 <h3><a href="listing.html">Paris</a></h3>
@@ -105,7 +105,7 @@
                     <div class="grid-item-holder">
                         <div class="listing-item-grid">
                             <div class="listing-counter"><span>23 </span> Hotels</div>
-                            <img  src="{{ url('frontend/images/city/2.jpg') }}"   alt="">
+                            <img  src="{{ url('public/frontend/images/city/2.jpg') }}"   alt="">
                             <div class="listing-item-cat">
                                 <h3><a href="listing.html">London</a></h3>
                                 <div class="weather-grid"   data-grcity="London"></div>
@@ -121,7 +121,7 @@
                     <div class="grid-item-holder">
                         <div class="listing-item-grid">
                             <div class="listing-counter"><span>57</span> Hotels</div>
-                            <img  src="{{ url('frontend/images/city/5.jpg') }}"   alt="">
+                            <img  src="{{ url('public/frontend/images/city/5.jpg') }}"   alt="">
                             <div class="listing-item-cat">
                                 <h3><a href="listing.html">Dubai</a></h3>
                                 <div class="weather-grid"   data-grcity="Dubai"></div>
@@ -137,7 +137,7 @@
                     <div class="grid-item-holder">
                         <div class="listing-item-grid">
                             <div class="listing-counter"><span>122</span> Hotels</div>
-                            <img  src="{{ url('frontend/images/city/6.jpg') }}"   alt="">
+                            <img  src="{{ url('public/frontend/images/city/6.jpg') }}"   alt="">
                             <div class="listing-item-cat">
                                 <h3><a href="listing.html">New York</a></h3>
                                 <div class="weather-grid"   data-grcity="New York"></div>
@@ -176,8 +176,8 @@
                         <div class="listing-item">
                             <article class="geodir-category-listing fl-wrap">
                                 <div class="geodir-category-img">
-                                    <a href="listing-single.html"><img src="{{ url('frontend/images/gal/8.jpg') }}" alt=""></a>
-                                    <div class="listing-avatar"><a href="author-single.html"><img src="{{ url('frontend/images/avatar/1.jpg') }}" alt=""></a>
+                                    <a href="listing-single.html"><img src="{{ url('public/frontend/images/gal/8.jpg') }}" alt=""></a>
+                                    <div class="listing-avatar"><a href="author-single.html"><img src="{{ url('public/frontend/images/avatar/1.jpg') }}" alt=""></a>
                                         <span class="avatar-tooltip">Added By  <strong>Alisa Noory</strong></span>
                                     </div>
                                     <div class="sale-window">Sale 20%</div>
@@ -223,8 +223,8 @@
                         <div class="listing-item">
                             <article class="geodir-category-listing fl-wrap">
                                 <div class="geodir-category-img">
-                                    <a href="listing-single.html"><img src="{{ url('frontend/images/gal/4.jpg') }}" alt=""></a>
-                                    <div class="listing-avatar"><a href="author-single.html"><img src="{{ url('frontend/images/avatar/2.jpg') }}" alt=""></a>
+                                    <a href="listing-single.html"><img src="{{ url('public/frontend/images/gal/4.jpg') }}" alt=""></a>
+                                    <div class="listing-avatar"><a href="author-single.html"><img src="{{ url('public/frontend/images/avatar/2.jpg') }}" alt=""></a>
                                         <span class="avatar-tooltip">Added By  <strong>Julie Cramp</strong></span>
                                     </div>
                                     <div class="sale-window big-sale">Sale 50%</div>
@@ -272,8 +272,8 @@
                         <div class="listing-item">
                             <article class="geodir-category-listing fl-wrap">
                                 <div class="geodir-category-img">
-                                    <a href="listing-single.html"><img src="{{ url('frontend/images/gal/6.jpg') }}" alt=""></a>
-                                    <div class="listing-avatar"><a href="author-single.html"><img src="{{ url('frontend/images/avatar/3.jpg') }}" alt=""></a>
+                                    <a href="listing-single.html"><img src="{{ url('public/frontend/images/gal/6.jpg') }}" alt=""></a>
+                                    <div class="listing-avatar"><a href="author-single.html"><img src="{{ url('public/frontend/images/avatar/3.jpg') }}" alt=""></a>
                                         <span class="avatar-tooltip">Added By  <strong>Andy Moore</strong></span>
                                     </div>
                                     <div class="geodir-category-opt">
@@ -320,8 +320,8 @@
                         <div class="listing-item">
                             <article class="geodir-category-listing fl-wrap">
                                 <div class="geodir-category-img">
-                                    <a href="listing-single.html"><img src{{ url('frontend/images/gal/2.jpg') }}" alt=""></a>
-                                    <div class="listing-avatar"><a href="author-single.html"><img src="{{ url('frontend/images/avatar/4.jpg') }}" alt=""></a>
+                                    <a href="listing-single.html"><img src{{ url('public/frontend/images/gal/2.jpg') }}" alt=""></a>
+                                    <div class="listing-avatar"><a href="author-single.html"><img src="{{ url('public/frontend/images/avatar/4.jpg') }}" alt=""></a>
                                         <span class="avatar-tooltip">Added By  <strong>Mary Jones</strong></span>
                                     </div>
                                     <div class="sale-window">Sale 20%</div>
@@ -369,8 +369,8 @@
                         <div class="listing-item">
                             <article class="geodir-category-listing fl-wrap">
                                 <div class="geodir-category-img">
-                                    <a href="listing-single.html"><img src="{{ url('frontend/images/gal/3.jpg') }}" alt=""></a>
-                                    <div class="listing-avatar"><a href="author-single.html"><img src="{{ url('frontend/images/avatar/5.jpg') }}" alt=""></a>
+                                    <a href="listing-single.html"><img src="{{ url('public/frontend/images/gal/3.jpg') }}" alt=""></a>
+                                    <div class="listing-avatar"><a href="author-single.html"><img src="{{ url('public/frontend/images/avatar/5.jpg') }}" alt=""></a>
                                         <span class="avatar-tooltip">Added By  <strong>Fider Mamby</strong></span>
                                     </div>
                                     <div class="sale-window">Sale 10%</div>
@@ -418,8 +418,8 @@
                         <div class="listing-item">
                             <article class="geodir-category-listing fl-wrap">
                                 <div class="geodir-category-img">
-                                    <a href="listing-single.html"><img src="{{ url('frontend/images/gal/5.jpg') }}" alt=""></a>
-                                    <div class="listing-avatar"><a href="author-single.html"><img src="{{ url('frontend/images/avatar/1.jpg') }}" alt=""></a>
+                                    <a href="listing-single.html"><img src="{{ url('public/frontend/images/gal/5.jpg') }}" alt=""></a>
+                                    <div class="listing-avatar"><a href="author-single.html"><img src="{{ url('public/frontend/images/avatar/1.jpg') }}" alt=""></a>
                                         <span class="avatar-tooltip">Added By  <strong>Alisa Noory</strong></span>
                                     </div>
                                     <div class="sale-window big-sale">Sale 70%</div>
@@ -471,7 +471,7 @@
         <!-- section end -->
         <!--section -->
         <section class="parallax-section" data-scrollax-parent="true">
-            <div class="bg"  data-bg="{{ url('frontend/images/bg/2.jpg') }}" data-scrollax="properties: { translateY: '100px' }"></div>
+            <div class="bg"  data-bg="{{ url('public/frontend/images/bg/2.jpg') }}" data-scrollax="properties: { translateY: '100px' }"></div>
             <div class="overlay op7"></div>
             <!--container-->
             <div class="container">
@@ -494,7 +494,7 @@
                                 <div class="slick-slide-item">
                                     <div class="hotel-card fl-wrap title-sin_item">
                                         <div class="geodir-category-img card-post">
-                                            <a href="listing-single.html"><img src="{{ url('frontend/images/gal/8.jpg') }}" alt=""></a>
+                                            <a href="listing-single.html"><img src="{{ url('public/frontend/images/gal/8.jpg') }}" alt=""></a>
                                             <div class="listing-counter">Awg/Night <strong>$85</strong></div>
                                             <div class="sale-window">Sale 20%</div>
                                             <div class="geodir-category-opt">
@@ -514,7 +514,7 @@
                                 <div class="slick-slide-item">
                                     <div class="hotel-card fl-wrap title-sin_item">
                                         <div class="geodir-category-img">
-                                            <a href="listing-single.html"><img src="{{ url('frontend/images/gal/7.jpg') }}" alt=""></a>
+                                            <a href="listing-single.html"><img src="{{ url('public/frontend/images/gal/7.jpg') }}" alt=""></a>
                                             <div class="listing-counter">Awg/Night <strong>$80</strong></div>
                                             <div class="sale-window big-sale">Sale 50%</div>
                                             <div class="geodir-category-opt">
@@ -534,7 +534,7 @@
                                 <div class="slick-slide-item">
                                     <div class="hotel-card fl-wrap title-sin_item">
                                         <div class="geodir-category-img">
-                                            <a href="listing-single.html"><img src="{{ url('frontend/images/gal/9.jpg') }}" alt=""></a>
+                                            <a href="listing-single.html"><img src="{{ url('public/frontend/images/gal/9.jpg') }}" alt=""></a>
                                             <div class="listing-counter">Awg/Night <strong>$120</strong></div>
                                             <div class="sale-window">Sale 10%</div>
                                             <div class="geodir-category-opt">
@@ -680,11 +680,11 @@
                     </div>
                     <div class="col-md-6">
                         <div class="collage-image">
-                            <img src="{{ url('frontend/images/api.png') }}" class="main-collage-image" alt="">
+                            <img src="{{ url('public/frontend/images/api.png') }}" class="main-collage-image" alt="">
                             <div class="images-collage-title color3-bg">Easy<span>Book</span></div>
-                            <div class="collage-image-min cim_1"><img src="{{ url('frontend/images/api/1.jpg') }}" alt=""></div>
-                            <div class="collage-image-min cim_2"><img src="{{ url('frontend/images/api/2.jpg') }}" alt=""></div>
-                            <div class="collage-image-min cim_3"><img src="{{ url('frontend/images/api/3.jpg') }}" alt=""></div>
+                            <div class="collage-image-min cim_1"><img src="{{ url('public/frontend/images/api/1.jpg') }}" alt=""></div>
+                            <div class="collage-image-min cim_2"><img src="{{ url('public/frontend/images/api/2.jpg') }}" alt=""></div>
+                            <div class="collage-image-min cim_3"><img src="{{ url('public/frontend/images/api/3.jpg') }}" alt=""></div>
                             <div class="collage-image-input">Search <i class="fa fa-search"></i></div>
                             <div class="collage-image-btn color2-bg">Booking now</div>
                         </div>
@@ -712,7 +712,7 @@
                     <!--slick-item -->
                     <div class="slick-item">
                         <div class="text-carousel-item">
-                            <div class="popup-avatar"><img src="{{ url('frontend/images/avatar/1.jpg') }}" alt=""></div>
+                            <div class="popup-avatar"><img src="{{ url('public/frontend/images/avatar/1.jpg') }}" alt=""></div>
                             <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
                             <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
                             <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
@@ -723,7 +723,7 @@
                     <!--slick-item -->
                     <div class="slick-item">
                         <div class="text-carousel-item">
-                            <div class="popup-avatar"><img src="{{ url('frontend/images/avatar/2.jpg') }}" alt=""></div>
+                            <div class="popup-avatar"><img src="{{ url('public/frontend/images/avatar/2.jpg') }}" alt=""></div>
                             <div class="listing-rating card-popup-rainingvis" data-starrating2="4"> </div>
                             <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
                             <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
@@ -734,7 +734,7 @@
                     <!--slick-item -->
                     <div class="slick-item">
                         <div class="text-carousel-item">
-                            <div class="popup-avatar"><img src="{{ url('frontend/images/avatar/3.jpg') }}" alt=""></div>
+                            <div class="popup-avatar"><img src="{{ url('public/frontend/images/avatar/3.jpg') }}" alt=""></div>
                             <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
                             <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
                             <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
@@ -745,7 +745,7 @@
                     <!--slick-item -->
                     <div class="slick-item">
                         <div class="text-carousel-item">
-                            <div class="popup-avatar"><img src="{{ url('frontend/images/avatar/4.jpg') }}" alt=""></div>
+                            <div class="popup-avatar"><img src="{{ url('public/frontend/images/avatar/4.jpg') }}" alt=""></div>
                             <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
                             <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
                             <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
@@ -759,7 +759,7 @@
         </section>
         <!-- section end-->
         <section class="parallax-section" data-scrollax-parent="true">
-            <div class="bg"  data-bg="{{ url('frontend/images/bg/14.jpg') }}" data-scrollax="properties: { translateY: '100px' }"></div>
+            <div class="bg"  data-bg="{{ url('public/frontend/images/bg/14.jpg') }}" data-scrollax="properties: { translateY: '100px' }"></div>
             <div class="overlay"></div>
             <!--container-->
             <div class="container">
@@ -792,12 +792,12 @@
                     <div class="col-md-4">
                         <article class="card-post">
                             <div class="card-post-img fl-wrap">
-                                <a href="blog-single.html"><img  src="{{ url('frontend/images/all/11.jpg') }}"   alt=""></a>
+                                <a href="blog-single.html"><img  src="{{ url('public/frontend/images/all/11.jpg') }}"   alt=""></a>
                             </div>
                             <div class="card-post-content fl-wrap">
                                 <h3><a href="blog-single.html">Blog Post Title.</a></h3>
                                 <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. </p>
-                                <div class="post-author"><a href="#"><img src="{{ url('frontend/images/avatar/4.jpg') }}" alt=""><span>By , Mery Lynn</span></a></div>
+                                <div class="post-author"><a href="#"><img src="{{ url('public/frontend/images/avatar/4.jpg') }}" alt=""><span>By , Mery Lynn</span></a></div>
                                 <div class="post-opt">
                                     <ul>
                                         <li><i class="fal fa-calendar"></i> <span>25 April 2018</span></li>
@@ -814,9 +814,9 @@
                                 <div class="list-single-main-media fl-wrap">
                                     <div class="single-slider-wrapper fl-wrap">
                                         <div class="single-slider fl-wrap"  >
-                                            <div class="slick-slide-item"><img src="{{ url('frontend/images/all/9.jpg') }}" alt=""></div>
-                                            <div class="slick-slide-item"><img src="{{ url('frontend/images/all/7.jpg') }}" alt=""></div>
-                                            <div class="slick-slide-item"><img src="{{ url('frontend/images/all/1.jpg') }}" alt=""></div>
+                                            <div class="slick-slide-item"><img src="{{ url('public/frontend/images/all/9.jpg') }}" alt=""></div>
+                                            <div class="slick-slide-item"><img src="{{ url('public/frontend/images/all/7.jpg') }}" alt=""></div>
+                                            <div class="slick-slide-item"><img src="{{ url('public/frontend/images/all/1.jpg') }}" alt=""></div>
                                         </div>
                                         <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
                                         <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
@@ -826,7 +826,7 @@
                             <div class="card-post-content fl-wrap">
                                 <h3><a href="blog-single.html">Blog Post Title.</a></h3>
                                 <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. </p>
-                                <div class="post-author"><a href="#"><img src="{{ url('frontend/images/avatar/1.jpg') }}" alt=""><span>By , Mery Lynn</span></a></div>
+                                <div class="post-author"><a href="#"><img src="{{ url('public/frontend/images/avatar/1.jpg') }}" alt=""><span>By , Mery Lynn</span></a></div>
                                 <div class="post-opt">
                                     <ul>
                                         <li><i class="fal fa-calendar"></i> <span>25 April 2018</span></li>
@@ -840,12 +840,12 @@
                     <div class="col-md-4">
                         <article class="card-post">
                             <div class="card-post-img fl-wrap">
-                                <a href="blog-single.html"><img  src="{{ url('frontend/images/all/10.jpg') }}"   alt=""></a>
+                                <a href="blog-single.html"><img  src="{{ url('public/frontend/images/all/10.jpg') }}"   alt=""></a>
                             </div>
                             <div class="card-post-content fl-wrap">
                                 <h3><a href="blog-single.html">Blog Post Title.</a></h3>
                                 <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. </p>
-                                <div class="post-author"><a href="#"><img src="{{ url('frontend/images/avatar/1.jpg') }}" alt=""><span>By , Mery Lynn</span></a></div>
+                                <div class="post-author"><a href="#"><img src="{{ url('public/frontend/images/avatar/1.jpg') }}" alt=""><span>By , Mery Lynn</span></a></div>
                                 <div class="post-opt">
                                     <ul>
                                         <li><i class="fal fa-calendar"></i> <span>25 April 2018</span></li>
@@ -914,32 +914,32 @@
                             <div class="footer-carousel fl-wrap">
                                 <!--footer-carousel-item-->
                                 <div class="footer-carousel-item">
-                                    <a href="#"><img src="{{ url('frontend/images/partners/1.png') }}" alt=""></a>
+                                    <a href="#"><img src="{{ url('public/frontend/images/partners/1.png') }}" alt=""></a>
                                 </div>
                                 <!--footer-carousel-item end-->
                                 <!--footer-carousel-item-->
                                 <div class="footer-carousel-item">
-                                    <a href="#"><img src="{{ url('frontend/images/partners/2.png') }}" alt=""></a>
+                                    <a href="#"><img src="{{ url('public/frontend/images/partners/2.png') }}" alt=""></a>
                                 </div>
                                 <!--footer-carousel-item end-->
                                 <!--footer-carousel-item-->
                                 <div class="footer-carousel-item">
-                                    <a href="#"><img src="{{ url('frontend/images/partners/3.png') }}" alt=""></a>
+                                    <a href="#"><img src="{{ url('public/frontend/images/partners/3.png') }}" alt=""></a>
                                 </div>
                                 <!--footer-carousel-item end-->
                                 <!--footer-carousel-item-->
                                 <div class="footer-carousel-item">
-                                    <a href="#"><img src="{{ url('frontend/images/partners/4.png') }}" alt=""></a>
+                                    <a href="#"><img src="{{ url('public/frontend/images/partners/4.png') }}" alt=""></a>
                                 </div>
                                 <!--footer-carousel-item end-->
                                 <!--footer-carousel-item-->
                                 <div class="footer-carousel-item">
-                                    <a href="#"><img src="{{ url('frontend/images/partners/5.png') }}" alt=""></a>
+                                    <a href="#"><img src="{{ url('public/frontend/images/partners/5.png') }}" alt=""></a>
                                 </div>
                                 <!--footer-carousel-item end-->
                                 <!--footer-carousel-item-->
                                 <div class="footer-carousel-item">
-                                    <a href="#"><img src="{{ url('frontend/images/partners/6.png') }}" alt=""></a>
+                                    <a href="#"><img src="{{ url('public/frontend/images/partners/6.png') }}" alt=""></a>
                                 </div>
                                 <!--footer-carousel-item end-->
                             </div>
@@ -983,21 +983,21 @@
                         <div class="widget-posts fl-wrap">
                             <ul>
                                 <li class="clearfix">
-                                    <a href="#"  class="widget-posts-img"><img src="{{ url('frontend/images/all/1.jpg') }}" class="respimg" alt=""></a>
+                                    <a href="#"  class="widget-posts-img"><img src="{{ url('public/frontend/images/all/1.jpg') }}" class="respimg" alt=""></a>
                                     <div class="widget-posts-descr">
                                         <a href="#" title="">Vivamus dapibus rutrum</a>
                                         <span class="widget-posts-date"> 21 Mar 09.05 </span>
                                     </div>
                                 </li>
                                 <li class="clearfix">
-                                    <a href="#"  class="widget-posts-img"><img src="{{ url('frontend/images/all/2.jpg') }}" class="respimg" alt=""></a>
+                                    <a href="#"  class="widget-posts-img"><img src="{{ url('public/frontend/images/all/2.jpg') }}" class="respimg" alt=""></a>
                                     <div class="widget-posts-descr">
                                         <a href="#" title=""> In hac habitasse platea</a>
                                         <span class="widget-posts-date"> 7 Mar 18.21 </span>
                                     </div>
                                 </li>
                                 <li class="clearfix">
-                                    <a href="#"  class="widget-posts-img"><img src="{{ url('frontend/images/all/3.jpg') }}" class="respimg" alt=""></a>
+                                    <a href="#"  class="widget-posts-img"><img src="{{ url('public/frontend/images/all/3.jpg') }}" class="respimg" alt=""></a>
                                     <div class="widget-posts-descr">
                                         <a href="#" title="">Tortor tempor in porta</a>
                                         <span class="widget-posts-date"> 7 Mar 16.42 </span>

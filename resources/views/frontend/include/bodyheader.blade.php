@@ -3,17 +3,17 @@
     <div class="header-top fl-wrap">
         <div class="container">
             <div class="logo-holder">
-                <a href="index.html"><img src="{{ url('frontend/images/logo.png') }}" alt=""></a>
+                <a href="index.html"><img src="{{ url('public/frontend/images/logo.png') }}" alt=""></a>
             </div>
             <a href="dashboard-add-listing.html" class="add-hotel">Add Your Hotel <span><i class="far fa-plus"></i></span></a>
             <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div>
             <div class="lang-wrap">
-                <div class="show-lang"><img src="{{ url('frontend/images/lan/1.png') }}" alt=""> <span>Eng</span><i class="fa fa-caret-down"></i></div>
+                <div class="show-lang"><img src="{{ url('public/frontend/images/lan/1.png') }}" alt=""> <span>Eng</span><i class="fa fa-caret-down"></i></div>
                 <ul class="lang-tooltip green-bg">
-                    <li><a href="#"><img src="{{ url('frontend/images/lan/4.png') }}" alt=""> De</a></li>
-                    <li><a href="#"><img src="{{ url('frontend/images/lan/5.png') }}" alt=""> It</a></li>
-                    <li><a href="#"><img src="{{ url('frontend/images/lan/2.png') }}" alt=""> Fr</a></li>
-                    <li><a href="#"><img src="{{ url('frontend/images/lan/3.png') }}" alt=""> Es</a></li>
+                    <li><a href="#"><img src="{{ url('public/frontend/images/lan/4.png') }}" alt=""> De</a></li>
+                    <li><a href="#"><img src="{{ url('public/frontend/images/lan/5.png') }}" alt=""> It</a></li>
+                    <li><a href="#"><img src="{{ url('public/frontend/images/lan/2.png') }}" alt=""> Fr</a></li>
+                    <li><a href="#"><img src="{{ url('public/frontend/images/lan/3.png') }}" alt=""> Es</a></li>
                 </ul>
             </div>
             <div class="currency-wrap">
@@ -34,7 +34,7 @@
             <div class="wishlist-link"><i class="fal fa-heart"></i><span class="wl_counter">3</span></div>
             <div class="header-user-menu">
                 <div class="header-user-name">
-                    <span><img src="{{ url('frontend/images/avatar/4.jpg') }}" alt=""></span>
+                    <span><img src="{{ url('public/frontend/images/avatar/4.jpg') }}" alt=""></span>
                     My account
                 </div>
                 <ul>
@@ -125,7 +125,7 @@
                     <div class="widget-posts fl-wrap">
                         <ul>
                             <li class="clearfix">
-                                <a href="#"  class="widget-posts-img"><img src="{{ url('frontend/images/gal/7.jpg') }}" class="respimg" alt=""></a>
+                                <a href="#"  class="widget-posts-img"><img src="{{ url('public/frontend/images/gal/7.jpg') }}" class="respimg" alt=""></a>
                                 <div class="widget-posts-descr">
                                     <a href="#" title="">Park Central</a>
                                     <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
@@ -134,7 +134,7 @@
                                 </div>
                             </li>
                             <li class="clearfix">
-                                <a href="#"  class="widget-posts-img"><img src="{{ url('frontend/images/gal/8.jpg') }}" class="respimg" alt=""></a>
+                                <a href="#"  class="widget-posts-img"><img src="{{ url('public/frontend/images/gal/8.jpg') }}" class="respimg" alt=""></a>
                                 <div class="widget-posts-descr">
                                     <a href="#" title="">Holiday Home</a>
                                     <div class="listing-rating card-popup-rainingvis" data-starrating2="3"></div>
@@ -143,7 +143,7 @@
                                 </div>
                             </li>
                             <li class="clearfix">
-                                <a href="#"  class="widget-posts-img"><img src="{{ url('frontend/images/gal/9.jpg') }}" class="respimg" alt=""></a>
+                                <a href="#"  class="widget-posts-img"><img src="{{ url('public/frontend/images/gal/9.jpg') }}" class="respimg" alt=""></a>
                                 <div class="widget-posts-descr">
                                     <a href="#" title="">Moonlight Hotel</a>
                                     <div class="listing-rating card-popup-rainingvis" data-starrating2="4"></div>

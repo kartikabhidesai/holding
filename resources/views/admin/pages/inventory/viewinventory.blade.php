@@ -43,7 +43,7 @@
                                     @if($value->holding_img != '' || $value->holding_img != NULL)
                                     <img height="50px" width="50px" src="{{ url('/uploads/inventory/'.$value->holding_img) }}" alt="User's Profile Picture">
                                     @else
-                                    <img  height="50px" width="50px" src="{{ url('admin/assets/img/mega-img1.jpg') }}" alt="User's Profile Picture">
+                                    <img  height="50px" width="50px" src="{{ url('public/admin/assets/img/mega-img1.jpg') }}" alt="User's Profile Picture">
                                     @endif
                                 </td>
                                 <td class="center">{{ $value->fname }}</td>

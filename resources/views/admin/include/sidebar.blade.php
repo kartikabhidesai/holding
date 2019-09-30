@@ -16,7 +16,7 @@ $items = Session::get('logindata');
                     <div class="user-panel">
                         <div class="row">
                             <div class="sidebar-userpic">
-                                <img src="{{ url('admin/assets/img/dp.jpg') }}" class="img-responsive" alt=""> </div>
+                                <img src="{{ url('public/admin/assets/img/dp.jpg') }}" class="img-responsive" alt=""> </div>
                         </div>
                         <div class="profile-usertitle">
                             <div class="sidebar-userpic-name">{{ "welcome" }}</div>
@@ -77,7 +77,7 @@ $items = Session::get('logindata');
                     <div class="user-panel">
                         <div class="row">
                             <div class="sidebar-userpic">
-                                <img src="{{ url('admin/assets/img/dp.jpg') }}" class="img-responsive" alt=""> </div>
+                                <img src="{{ url('public/admin/assets/img/dp.jpg') }}" class="img-responsive" alt=""> </div>
                         </div>
                         <div class="profile-usertitle">
                             <div class="sidebar-userpic-name">{{ "welcome" }}</div>
@@ -138,7 +138,7 @@ $items = Session::get('logindata');
                     <div class="user-panel">
                         <div class="row">
                             <div class="sidebar-userpic">
-                                <img src="{{ url('admin/assets/img/dp.jpg') }}" class="img-responsive" alt=""> </div>
+                                <img src="{{ url('public/admin/assets/img/dp.jpg') }}" class="img-responsive" alt=""> </div>
                         </div>
                         <div class="profile-usertitle">
                             <div class="sidebar-userpic-name">{{ "welcome" }}</div>

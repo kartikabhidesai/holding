@@ -8,26 +8,26 @@
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
     
-    <link href="{{ url('admin/assets/plugins/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ url('admin/assets/plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ url('public/admin/assets/plugins/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('public/admin/assets/plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/>
     
-    <link href="{{ url('admin/assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ url('admin/assets/plugins/summernote/summernote.css') }}" rel="stylesheet">
+    <link href="{{ url('public/admin/assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('public/admin/assets/plugins/summernote/summernote.css') }}" rel="stylesheet">
     <!-- morris chart -->
-    <link href="{{ url('admin/assets/plugins/morris/morris.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('public/admin/assets/plugins/morris/morris.css') }}" rel="stylesheet" type="text/css" />
     <!-- Material Design Lite CSS -->
-    <link rel="stylesheet" href="{{ url('admin/assets/plugins/material/material.min.css') }}">
-    <link rel="stylesheet" href="{{ url('admin/assets/css/material_style.css') }}">
+    <link rel="stylesheet" href="{{ url('public/admin/assets/plugins/material/material.min.css') }}">
+    <link rel="stylesheet" href="{{ url('public/admin/assets/css/material_style.css') }}">
     <!-- animation -->
-    <link href="{{ url('admin/assets/css/pages/animate_page.css') }}" rel="stylesheet">
+    <link href="{{ url('public/admin/assets/css/pages/animate_page.css') }}" rel="stylesheet">
     <!-- Template Styles -->
-    <link href="{{ url('admin/assets/css/plugins.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ url('admin/assets/css/style.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ url('admin/assets/css/responsive.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ url('admin/assets/css/theme-color.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ url('admin/assets/css/toastr.min.css') }}" rel="stylesheet">
+    <link href="{{ url('public/admin/assets/css/plugins.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('public/admin/assets/css/style.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('public/admin/assets/css/responsive.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('public/admin/assets/css/theme-color.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('public/admin/assets/css/toastr.min.css') }}" rel="stylesheet">
     <!-- favicon -->
-    <link rel="shortcut icon" href="{{ url('admin/assets/img/favicon.ico') }}" /> 
+    <link rel="shortcut icon" href="{{ url('public/admin/assets/img/favicon.ico') }}" /> 
     <style>.error{color:red}</style>
     <script>
             var baseurl = "{{ asset('/') }}";

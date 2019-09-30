@@ -6,16 +6,16 @@
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <!--=============== css  ===============-->
-    <link type="text/css" rel="stylesheet" href="{{ url('frontend/css/reset.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ url('frontend/css/plugins.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ url('frontend/css/style.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ url('frontend/css/color.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url('public/frontend/css/reset.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url('public/frontend/css/plugins.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url('public/frontend/css/style.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url('public/frontend/css/color.css') }}">
     <!--=============== favicons ===============-->
-    <link rel="shortcut icon" href="{{ url('frontend/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ url('public/frontend/images/favicon.ico') }}">
     @if (!empty($css)) 
     @foreach ($css as $value) 
     @if(!empty($value))
-    <link rel="stylesheet" href="{{ asset('css/'.$value) }}">
+    <link rel="stylesheet" href="{{ asset('public/css/'.$value) }}">
     @endif
     @endforeach
     @endif
