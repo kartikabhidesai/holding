@@ -22,34 +22,44 @@
                         <thead>
                             <tr>
                                 <th class="center">No</th>
-                                <th class="center">Image</th>
-                                <th class="center"> Name </th>
-                                <th class="center"> Email </th>
-                                <th class="center"> Mobile </th>
-                                <th class="center"> Address</th>
-                                <th class="center"> City </th>
-                                <th class="center"> State </th>
-                                <th class="center">Action </th>
+                                <th class="center">Profile</th>
+                                <th class="center">First Name </th>
+                                <th class="center">Last Name </th>
+                                <th class="center"> Email</th>
+                                <th class="center">Mobile</th>
+                                <th class="center">State </th>
+                                <th class="center">City </th>
+                                <th class="center">Address</th>
+                                <th class="center">Update</th>
+                                <th class="center">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @php 
+                            $i =0;
+                            @endphp
                             @foreach($result as $value)
+                            @php
+                            $i++;
+                            @endphp
                             <tr class="odd gradeX">
-                                <td class="user-circle-img">
-                                    @if($value->holding_img != '' || $value->holding_img != NULL)
-                                    <img height="50px" width="50px" src="{{ url('/uploads/inventory/'.$value->holding_img) }}" alt="User's Profile Picture">
+                                <td class="center">{{ $i }}</td>
+                                <td class="user-circle-img center">
+                                    @if($value->profile != '' || $value->profile != NULL)
+                                    <img height="50px" width="50px" src="{{ url('/uploads/profile/'.$value->profile) }}" alt="User's Profile Picture">
                                     @else
                                     <img  height="50px" width="50px" src="{{ url('public/admin/assets/img/mega-img1.jpg') }}" alt="User's Profile Picture">
                                     @endif
                                 </td>
-                                <td class="center">{{ $value->fname }}</td>
-                                <td class="center">{{ $value->lname }}</td>
+                                <td class="center">{{ $value->firstname }}</td>
+                                <td class="center">{{ $value->lastname }}</td>
                                 <td class="center">{{ $value->email }}</td>
-                                <td class="center">{{ $value->mobile }}</td>
+                                <td class="center">{{ $value->mobileno }}</td>
+                                <td class="center">{{ $value->state }}</td>
                                 <td class="center">{{ $value->city }}</td>
                                 <td class="center">{{ $value->address }}</td>
                                 <td class="center">
-                                    <a href="{{ route('Update-Inventory',$value->id) }}" class="btn btn-tbl-edit btn-xs">
+                                    <a href="{{ route('edit-vender',$value->id) }}" class="btn btn-tbl-edit btn-xs">
                                         <i class="fa fa-pencil"></i>
                                     </a>
                                 </td>

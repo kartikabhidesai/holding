@@ -40,6 +40,8 @@ Route::match(['get', 'post'], 'dashboard', ['as' => 'dashboard', 'uses' => 'admi
 // Vender
 Route::match(['get', 'post'], 'vender', ['as' => 'vender', 'uses' => 'admin\vender\VenderController@index']);
 Route::match(['get', 'post'], 'add-vender', ['as' => 'add-vender', 'uses' => 'admin\vender\VenderController@add']);
+Route::match(['get', 'post'], 'edit-vender/{id}', ['as' => 'edit-vender', 'uses' => 'admin\vender\VenderController@edit']);
+Route::match(['get', 'post'], 'vender-ajaxaction', ['as' => 'vender-ajaxaction', 'uses' => 'admin\vender\VenderController@ajaxaction']);
 
 Route::match(['get', 'post'], 'logout', ['as' => 'logout', 'uses' => 'admin\LoginController@logout']);
 

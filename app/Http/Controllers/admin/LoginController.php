@@ -40,15 +40,15 @@ class LoginController extends Controller {
 //                return redirect('dashboard');
             } else {
 
-                if (Auth::guard('agencies')->attempt(['email' => $request->input('email'), 'password' => $request->input('password'), 'user_type' => 'AGENCIES'])) {
+                if (Auth::guard('agencies')->attempt(['email' => $request->input('email'), 'password' => $request->input('password'), 'user_type' => 'VENDER'])) {
 
                     $loginData = array(
-                        'fname' => Auth::guard('agencies')->user()->fname,
-                        'lname' => Auth::guard('agencies')->user()->lname,
-                        'mobile' => Auth::guard('agencies')->user()->mobile,
-                        'email' => Auth::guard('agencies')->user()->email,
-                        'id' => Auth::guard('agencies')->user()->id,
-                        'user_type' => Auth::guard('agencies')->user()->user_type,
+                        'fname' => Auth::guard('vender')->user()->fname,
+                        'lname' => Auth::guard('vender')->user()->lname,
+                        'mobile' => Auth::guard('vender')->user()->mobile,
+                        'email' => Auth::guard('vender')->user()->email,
+                        'id' => Auth::guard('vender')->user()->id,
+                        'user_type' => Auth::guard('vender')->user()->user_type,
                     );
                     Session::push('logindata', $loginData);
                     $return['status'] = 'success';
@@ -136,7 +136,7 @@ class LoginController extends Controller {
 
     public function resetGuard() {
         Auth::logout();
-        Auth::guard('agencies')->logout();
+        Auth::guard('admin')->logout();
         Session::forget('logindata');
     }
 

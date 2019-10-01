@@ -287,12 +287,12 @@ function handleAjaxResponse(output) {
     if (typeof output.redirect !== 'undefined' && output.redirect != '') {
         setTimeout(function () {
             window.location.href = output.redirect;
-        }, 4000);
+        }, 2000);
     }
     if (typeof output.reload !== 'undefined' && output.redirect != '') {
         setTimeout(function () {
             window.location.href = location.reload();
-        }, 4000);
+        }, 2000);
     }
     if (typeof output.jscode !== 'undefined' && output.jscode != '') {
         eval(output.jscode);
@@ -332,12 +332,12 @@ function handleFormValidate(form, rules, submitCallback, showToaster) {
             this.defaultShowErrors(); // keep error messages next to each input element   
         },
         highlight: function (element) { // hightlight error inputs
-//            $(element)
-//                    .closest(' .inputbox').addClass('has-error'); // set error class to the control group
+            $(element)
+                    .closest(' .form-control ').addClass('has-error'); // set error class to the control group
 //            
 //            $(element).parent().parent().find('.select2').addClass('has-error');
-            $(element).parent().addClass('error')
-            $(element).parent().addClass('is-focused')
+//            $(element).parent().addClass('error')
+//            $(element).parent().addClass('is-focused')
         },
         unhighlight: function (element) { // revert the change done by hightlight
             $(element)
@@ -347,9 +347,9 @@ function handleFormValidate(form, rules, submitCallback, showToaster) {
             label
                     .closest('.c-input, .form-control').removeClass('has-error'); // set success class to the control group
         },
-//        errorPlacement: function (error, element) {
-//            return true;
-//        },
+        errorPlacement: function (error, element) {
+            return false;
+        },
 
 //        messages: {
 //            firstname: "Enter your firstname",

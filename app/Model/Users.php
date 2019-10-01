@@ -18,7 +18,7 @@ class Users extends Model
         $bojUser->lname = $request->input('lname');
         $bojUser->email = $request->input('email');
         $bojUser->mobile = $request->input('mobile');
-        $bojUser->user_type = "AGENCIES";
+        $bojUser->user_type = "ADMIN";
         $bojUser->status  = "0";
         $bojUser->password = Hash::make($request->input('password'));
         $bojUser->created_at = date("Y-m-d h:i:s");

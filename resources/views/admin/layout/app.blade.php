@@ -16,5 +16,17 @@
             </div>
             @include('admin.include.footer')
         </div>
+         <style>
+            .has-error {
+                border-color: red!important;
+                border-width: 1px!important;
+            }
+            .form-control.error {
+                border: 1px solid red!important;
+            }
+            label.error {
+                display: none!important;
+            }
+        </style>
     </body>
 </html>
