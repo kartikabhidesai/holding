@@ -30,6 +30,8 @@ class LoginController extends Controller {
                     'user_type' => Auth::guard()->user()->user_type,
                 );
                 Session::push('logindata', $loginData);
+                
+                
                     $return['status'] = 'success';
                     $return['message'] = "Well Done login Successfully!";
                     $return['redirect'] = route('dashboard');

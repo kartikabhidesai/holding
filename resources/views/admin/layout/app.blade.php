@@ -5,7 +5,7 @@
         <div class="page-wrapper">  
             @include('admin.include.bodyheader')
             <div class="page-container">
-                @include('admin.include.sidebar')
+                @include('admin.include.leftpanel.admin_sidebar')
                 <div class="page-content-wrapper">
                     <div class="page-content">
                         @include('admin.include.breadcrumb')

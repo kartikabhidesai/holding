@@ -31,10 +31,15 @@ Route::match(['get', 'post'], 'forgotpassword', ['as' => 'forgotpassword', 'uses
 
 Route::match(['get', 'post'], 'dashboard', ['as' => 'dashboard', 'uses' => 'admin\dashboard\DashboardController@dashboard']);
 
-Route::match(['get', 'post'], 'Inventory', ['as' => 'Inventory', 'uses' => 'admin\inventory\InventoryController@newinventory']);
-Route::match(['get', 'post'], 'Inventory-List', ['as' => 'Inventory-List', 'uses' => 'admin\inventory\InventoryController@viewinventory']);
-Route::match(['get', 'post'], 'Update-Inventory/{id}', ['as' => 'Update-Inventory', 'uses' => 'admin\inventory\InventoryController@editinventory']);
-Route::match(['get', 'post'], 'inventory-ajax-action', ['as' => 'inventoryajaxaction', 'uses' => 'admin\inventory\InventoryController@inventoryajaxaction']);
+// Inventory
+//Route::match(['get', 'post'], 'Inventory', ['as' => 'Inventory', 'uses' => 'admin\inventory\InventoryController@newinventory']);
+//Route::match(['get', 'post'], 'Inventory-List', ['as' => 'Inventory-List', 'uses' => 'admin\inventory\InventoryController@viewinventory']);
+//Route::match(['get', 'post'], 'Update-Inventory/{id}', ['as' => 'Update-Inventory', 'uses' => 'admin\inventory\InventoryController@editinventory']);
+//Route::match(['get', 'post'], 'inventory-ajax-action', ['as' => 'inventoryajaxaction', 'uses' => 'admin\inventory\InventoryController@inventoryajaxaction']);
+
+// Vender
+Route::match(['get', 'post'], 'vender', ['as' => 'vender', 'uses' => 'admin\vender\VenderController@index']);
+Route::match(['get', 'post'], 'add-vender', ['as' => 'add-vender', 'uses' => 'admin\vender\VenderController@add']);
 
 Route::match(['get', 'post'], 'logout', ['as' => 'logout', 'uses' => 'admin\LoginController@logout']);
 

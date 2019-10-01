@@ -5,10 +5,14 @@ namespace App\Http\Controllers\admin\dashboard;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Session;
+use Auth;
+use Route;
+
 class DashboardController extends Controller
 {
     public function __construct() {
-        
+//        parent::__construct();
+//        $this->middleware('admin');
     }
     public function dashboard(Request $request){
         
