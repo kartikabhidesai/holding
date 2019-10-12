@@ -19,6 +19,7 @@ Route::match(['get', 'post'], '/', ['as' => '/', 'uses' => 'frontend\HomeControl
     Route::match(['get', 'post'], 'register', ['as' => 'register', 'uses' => 'admin\LoginController@register']);
     Route::match(['get', 'post'], 'forgotpassword', ['as' => 'forgotpassword', 'uses' => 'admin\LoginController@forgotpassword']);
     Route::match(['get', 'post'], 'logout', ['as' => 'logout', 'uses' => 'admin\LoginController@logout']);
+    Route::match(['get', 'post'], 'createpassword', ['as' => 'createpassword', 'uses' => 'admin\LoginController@createpassword']);
     
     $adminPrefix = "";
     

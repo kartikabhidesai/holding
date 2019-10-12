@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Redirect;
 use Auth;
 use Session;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller {
 
@@ -103,6 +104,10 @@ class LoginController extends Controller {
         Auth::logout();
         Auth::guard('admin')->logout();
         Session::forget('logindata');
+    }
+    
+    public function createpassword(){
+         print_r(Hash::make('123'));
     }
 
 }
