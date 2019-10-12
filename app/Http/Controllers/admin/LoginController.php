@@ -19,18 +19,18 @@ class LoginController extends Controller {
     }
     public function login(Request $request) {
         if ($request->isMethod('post')) {
-            if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password'), 'user_type' => 'ADMIN'])) {
-
+            if (Auth::guard('admin')->attempt(['email' => $request->input('email'), 'password' => $request->input('password'), 'user_type' => 'ADMIN'])) {
+               
                 $loginData = array(
-                    'fname' => Auth::guard()->user()->fname,
-                    'lname' => Auth::guard()->user()->lname,
-                    'mobile' => Auth::guard()->user()->mobile,
-                    'email' => Auth::guard()->user()->email,
-                    'id' => Auth::guard()->user()->id,
-                    'user_type' => Auth::guard()->user()->user_type,
+                    'fname' => Auth::guard('admin')->user()->fname,
+                    'lname' => Auth::guard('admin')->user()->lname,
+                    'mobile' => Auth::guard('admin')->user()->mobile,
+                    'email' => Auth::guard('admin')->user()->email,
+                    'id' => Auth::guard('admin')->user()->id,
+                    'user_type' => Auth::guard('admin')->user()->user_type,
                 );
-                Session::push('logindata', $loginData);
                 
+                Session::push('logindata', $loginData);
                 
                     $return['status'] = 'success';
                     $return['message'] = "Well Done login Successfully!";
@@ -40,42 +40,8 @@ class LoginController extends Controller {
 //                return redirect('dashboard');
             } else {
 
-                if (Auth::guard('agencies')->attempt(['email' => $request->input('email'), 'password' => $request->input('password'), 'user_type' => 'VENDER'])) {
-
-                    $loginData = array(
-                        'fname' => Auth::guard('vender')->user()->fname,
-                        'lname' => Auth::guard('vender')->user()->lname,
-                        'mobile' => Auth::guard('vender')->user()->mobile,
-                        'email' => Auth::guard('vender')->user()->email,
-                        'id' => Auth::guard('vender')->user()->id,
-                        'user_type' => Auth::guard('vender')->user()->user_type,
-                    );
-                    Session::push('logindata', $loginData);
-                    $return['status'] = 'success';
-                    $return['message'] = "Well Done login Successfully!";
-                    $return['redirect'] = route('agencies-dashboard');
-//                    return redirect('agencies-dashboard');
-                } else {
-
-                    if (Auth::guard('user')->attempt(['email' => $request->input('email'), 'password' => $request->input('password'), 'user_type' => 'USER'])) {
-                        $loginData = array(
-                            'fname' => Auth::guard('user')->user()->fname,
-                            'lname' => Auth::guard('user')->user()->lname,
-                            'mobile' => Auth::guard('user')->user()->mobile,
-                            'email' => Auth::guard('user')->user()->email,
-                            'id' => Auth::guard('user')->user()->id,
-                            'user_type' => Auth::guard('user')->user()->user_type,
-                        );
-                        Session::push('logindata', $loginData);
-                        $return['status'] = 'success';
-                        $return['message'] = "Well Done login Successfully!";
-                        $return['redirect'] = route('user-dashboard');
-//                        return redirect('user-dashboard');
-                    }else{
-                        $return['status'] = 'error';
-                        $return['message'] = "Invaild Id Or Password";
-                    }
-                }
+                $return['status'] = 'error';
+                $return['message'] = "Invaild Id Or Password";
             }
             echo json_encode($return);
             exit();
@@ -118,7 +84,6 @@ class LoginController extends Controller {
     }
 
     public function forgotpassword() {
-
         $data['title'] = 'forgotpassword | holding';
         $data['css'] = array();
         $data['plugincss'] = array();

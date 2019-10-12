@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin\dashboard;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use Session;
 use Auth;
 use Route;
@@ -12,10 +13,9 @@ class DashboardController extends Controller
 {
     public function __construct() {
 //        parent::__construct();
-//        $this->middleware('admin');
+        $this->middleware('admin');
     }
-    public function dashboard(Request $request){
-        
+    public function dashboard(Request $request){        
         $session = $request->session()->all();
         $items = Session::get('logindata')[0];
         $data['title'] = 'Admin Dashboard | holding';
@@ -27,7 +27,7 @@ class DashboardController extends Controller
         $data['header'] = array(
             'title' => 'Dashboard',
             'breadcrumb' => array(
-                'Dashboard' => 'Dashboard'));
+            'Dashboard' => 'Dashboard'));
         return view('admin.pages.dashboard.dashboard',$data);
     }
     

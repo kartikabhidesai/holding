@@ -32,14 +32,6 @@ $items = Session::get('logindata');
                         <span class="selected"></span>
                     </a>
                 </li>
-                
-                <li class="nav-item start {{ ($currRoute == 'vender')  ? 'active' : '' }}">
-                    <a href="{{ route('vender') }}" class="nav-link nav-toggle">
-                        <i class="fa fa-user-plus" ></i>
-                        <span class="title">Vender</span>
-                        <span class="selected"></span>
-                    </a>
-                </li>
           
             </ul>
         </div>
