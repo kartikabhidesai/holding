@@ -25,7 +25,7 @@
     
     @if (!empty($pluginjs)) 
     @foreach ($pluginjs as $value) 
-    <script src="{{ url('public/admin/assets/js/'.$value) }}" type="text/javascript"></script>
+    <script src="{{ url('public/admin/assets/'.$value) }}" type="text/javascript"></script>
     @endforeach
     @endif
     @if (!empty($js)) 

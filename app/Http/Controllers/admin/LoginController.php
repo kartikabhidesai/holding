@@ -44,7 +44,7 @@ class LoginController extends Controller {
                 $return['status'] = 'error';
                 $return['message'] = "Invaild Id Or Password";
             }
-            echo json_encode($return);
+            return json_encode($return);
             exit();
         }
         $data['title'] = 'login | holding';
@@ -72,7 +72,7 @@ class LoginController extends Controller {
                 $return['redirect'] = route('register');
             }
 
-            echo json_encode($return);
+            return json_encode($return);
             exit();
         }
         $data['title'] = 'register | holding';

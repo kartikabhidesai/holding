@@ -32,9 +32,45 @@ $items = Session::get('logindata');
                         <span class="selected"></span>
                     </a>
                 </li>
+                
+                <li class="nav-item start {{ ($currRoute == 'add-inquiry')  ? 'active' : '' }} {{ ($currRoute == 'close-inquiry')  ? 'active' : '' }}  {{ ($currRoute == 'inquiry')  ? 'active' : '' }}">
+                    <a href="#" class="nav-link nav-toggle">
+                         <i class="fa fa-question-circle" ></i>
+                        <span class="title">Inquiry</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item {{ ($currRoute == 'add-inquiry')  ? 'active' : '' }}">
+                            <a href="{{ route('add-inquiry') }}" class="nav-link ">
+                                <span class="title">Add Inquiry</span>
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item {{ ($currRoute == 'inquiry')  ? 'active' : '' }}">
+                            <a href="{{ route('inquiry') }}" class="nav-link ">
+                                <span class="title">Open Inquiry</span>
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item {{ ($currRoute == 'close-inquiry')  ? 'active' : '' }}">
+                            <a href="{{ route('close-inquiry') }}" class="nav-link ">
+                                <span class="title">Close Inquiry</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                                
+                
+                <li class="nav-item start {{ ($currRoute == 'booking')  ? 'active' : '' }}">
+                    <a href="{{ route('booking') }}" class="nav-link nav-toggle">
+                        <i class="fa fa-list" ></i>
+                        <span class="title">Booking</span>
+                        <span class="selected"></span>
+                    </a>
+                </li>
           
             </ul>
         </div>
     </div>
 </div>
-
