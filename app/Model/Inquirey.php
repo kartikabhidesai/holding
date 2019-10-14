@@ -54,6 +54,7 @@ class Inquirey extends Model
         $resultArr = $query->skip($requestData['start'])
                            ->take($requestData['length'])
                            ->select('*')->get();
+         $inquireytime = Config::get('constants.inquirey_time');
         $i = 0;
         $data = array();
         foreach ($resultArr as $row) {
@@ -76,7 +77,7 @@ class Inquirey extends Model
             $nestedData[] = $row["mobile"];
             $nestedData[] = $row["landline"];
             $nestedData[] = $row["email"];
-            $nestedData[] = $row["inquirytime"];
+            $nestedData[] = $inquireytime[$row["inquirytime"]];
             // $nestedData[] = '<img src="{{URL::asset("'.$row["company_image"].'")}}" alt="Company Pic" height="100" width="100">';
             $nestedData[] = $row["inquirydate"];
             $nestedData[] = $row["inquirysource"];
