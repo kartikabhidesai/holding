@@ -207,6 +207,25 @@ var Inquiry = function() {
             handleAjaxFormSubmit(form,true);
         });
     }
+    var editinquirey = function(){
+        var form = $('#editinquirey');
+        var rules = {
+            fname: {required: true},
+            lname: {required: true},
+            email: {required: true},
+            email: {required: true,email:true},
+            time: {required: true},
+            idate: {required: true},
+            isources: {required: true},
+            companyname: {required: true},
+            mono: {maxlength: 10,minlength: 10},
+            
+            
+        };
+        handleFormValidate(form, rules, function(form) {
+            handleAjaxFormSubmit(form,true);
+        });
+    }
     return {
         init: function() {
             list();
@@ -216,6 +235,9 @@ var Inquiry = function() {
         },
         add: function() {
             addinquirey();
+        },
+        edit: function() {
+            editinquirey();
         },
     }
 }();

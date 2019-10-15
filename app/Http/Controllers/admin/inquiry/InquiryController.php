@@ -68,6 +68,48 @@ class InquiryController extends Controller
         return view('admin.pages.inquiry.add',$data);
     }
     
+    public function edit(Request $request , $id){
+        if ($request->isMethod('post')) {
+            $objInquirey = new Inquirey();
+            $ret = $objInquirey->editInquirey($request);
+            if ($ret == "updated") {
+                $return['status'] = 'success';
+                $return['message'] = 'Inquirey updted successfully.';
+                $return['redirect'] = route('inquiry');
+            } 
+            if ($ret == "exits") {
+                $return['status'] = 'error';
+                $return['message'] = 'Cilent email address already exits.';
+            }
+            
+            if ($ret == "wrong") {
+                $return['status'] = 'error';
+                $return['message'] = 'something will be wrong.';
+            }
+            echo json_encode($return);
+            exit;
+        }
+        $objInquirey = new Inquirey();
+        $data['getinquireydetails']= $objInquirey->getdetails($id);
+        
+        $data['inquireytime'] =  Config::get('constants.inquirey_time');
+        $data['title'] = 'Add Inquiry | holding';
+        $data['css'] = array();
+        $data['plugincss'] = array('plugins/material-datetimepicker/bootstrap-material-datetimepicker.css');
+        $data['pluginjs'] = array('plugins/material-datetimepicker/moment-with-locales.min.js',
+                                'plugins/material-datetimepicker/bootstrap-material-datetimepicker.js',
+                                'plugins/material-datetimepicker/datetimepicker.js',
+                                'js/jquery.validate.min.js'
+                            );
+        $data['js'] = array('inquiry.js','ajaxfileupload.js', 'jquery.form.min.js');
+        $data['funinit'] = array('Inquiry.edit()');
+        $data['header'] = array(
+            'title' => 'Add Inquiry',
+            'breadcrumb' => array(
+            'Add Inquiry' => 'Add Inquiry'));
+        return view('admin.pages.inquiry.edit',$data);
+    }
+    
     
     public function closeinquiry(){
         $data['title'] = 'Close Inquiry List | holding';

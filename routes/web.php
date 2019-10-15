@@ -31,6 +31,7 @@
         
         Route::match(['get', 'post'], 'inquiry', ['as' => 'inquiry', 'uses' => 'admin\inquiry\InquiryController@index']);
         Route::match(['get', 'post'], 'add-inquiry', ['as' => 'add-inquiry', 'uses' => 'admin\inquiry\InquiryController@add']);
+        Route::match(['get', 'post'], 'edit-inquiry/{id}', ['as' => 'edit-inquiry', 'uses' => 'admin\inquiry\InquiryController@edit']);
         Route::match(['get', 'post'], 'close-inquiry', ['as' => 'close-inquiry', 'uses' => 'admin\inquiry\InquiryController@closeinquiry']);
         Route::match(['get', 'post'], 'inquirey-ajaxAction', ['as' => 'inquirey-ajaxAction', 'uses' => 'admin\inquiry\InquiryController@ajaxAction']);
     });
