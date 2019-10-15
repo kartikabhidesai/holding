@@ -16,6 +16,82 @@ var Inquiry = function() {
             'setColumnWidth': columnWidth
         };
         getDataTable(arrList);
+        
+        $('body').on("click",".closeinquirey",function(){
+            var val = $(this).attr("data-id"); 
+            setTimeout(function() {
+                $('.yes-sure-close:visible').attr('data-id', val);
+            }, 500);
+        });
+        
+        $('body').on('click', '.yes-sure-close', function() {
+            var id = $(this).attr('data-id');
+            
+            var data = {id: id, _token: $('#_token').val()};
+            $.ajax({
+                type: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('input[name="_token"]').val(),
+                },
+                url: baseurl + "inquirey-ajaxAction",
+                data: {'action': 'closeinquirey', 'data': data},
+                success: function(data) {
+                    handleAjaxResponse(data);
+                }
+            });
+        });
+        
+        
+        
+        $('body').on("click",".openinquirey",function(){
+             var val = $(this).attr("data-id");
+              setTimeout(function() {
+                $('.yes-sure-open:visible').attr('data-id', val);
+            }, 500);
+        });
+        
+        $('body').on('click', '.yes-sure-open', function() {
+            var id = $(this).attr('data-id');
+            var data = {id: id, _token: $('#_token').val()};
+            $.ajax({
+                type: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('input[name="_token"]').val(),
+                },
+                url: baseurl + "inquirey-ajaxAction",
+                data: {'action': 'openinquirey', 'data': data},
+                success: function(data) {
+                    handleAjaxResponse(data);
+                }
+            });
+        });
+        
+        
+        
+        $('body').on("click",".deleteinquirey",function(){
+             var val = $(this).attr("data-id");
+              setTimeout(function() {
+                $('.yes-sure:visible').attr('data-id', val);
+            }, 500);
+        });
+        
+        $('body').on('click', '.yes-sure', function() {
+            var id = $(this).attr('data-id');
+            var data = {id: id, _token: $('#_token').val()};
+            $.ajax({
+                type: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('input[name="_token"]').val(),
+                },
+                url: baseurl + "inquirey-ajaxAction",
+                data: {'action': 'deleteinquirey', 'data': data},
+                success: function(data) {
+                    handleAjaxResponse(data);
+                }
+            });
+        });
+        
+        
     }
     var closelist = function() {
         
@@ -34,6 +110,81 @@ var Inquiry = function() {
             'setColumnWidth': columnWidth
         };
         getDataTable(arrList);
+        
+        
+        $('body').on("click",".closeinquirey",function(){
+            var val = $(this).attr("data-id"); 
+            setTimeout(function() {
+                $('.yes-sure-close:visible').attr('data-id', val);
+            }, 500);
+        });
+        
+        $('body').on('click', '.yes-sure-close', function() {
+            var id = $(this).attr('data-id');
+            
+            var data = {id: id, _token: $('#_token').val()};
+            $.ajax({
+                type: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('input[name="_token"]').val(),
+                },
+                url: baseurl + "inquirey-ajaxAction",
+                data: {'action': 'closeinquirey', 'data': data},
+                success: function(data) {
+                    handleAjaxResponse(data);
+                }
+            });
+        });
+        
+        
+        
+        $('body').on("click",".openinquirey",function(){
+             var val = $(this).attr("data-id");
+              setTimeout(function() {
+                $('.yes-sure-open:visible').attr('data-id', val);
+            }, 500);
+        });
+        
+        $('body').on('click', '.yes-sure-open', function() {
+            var id = $(this).attr('data-id');
+            var data = {id: id, _token: $('#_token').val()};
+            $.ajax({
+                type: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('input[name="_token"]').val(),
+                },
+                url: baseurl + "inquirey-ajaxAction",
+                data: {'action': 'openinquirey', 'data': data},
+                success: function(data) {
+                    handleAjaxResponse(data);
+                }
+            });
+        });
+        
+        
+        
+        $('body').on("click",".deleteinquirey",function(){
+             var val = $(this).attr("data-id");
+              setTimeout(function() {
+                $('.yes-sure:visible').attr('data-id', val);
+            }, 500);
+        });
+        
+        $('body').on('click', '.yes-sure', function() {
+            var id = $(this).attr('data-id');
+            var data = {id: id, _token: $('#_token').val()};
+            $.ajax({
+                type: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('input[name="_token"]').val(),
+                },
+                url: baseurl + "inquirey-ajaxAction",
+                data: {'action': 'deleteinquirey', 'data': data},
+                success: function(data) {
+                    handleAjaxResponse(data);
+                }
+            });
+        });
     }
     
     var addinquirey = function(){
@@ -46,6 +197,8 @@ var Inquiry = function() {
             time: {required: true},
             idate: {required: true},
             isources: {required: true},
+            companyname: {required: true},
+            mono: {maxlength: 10,minlength: 10},
             
             
         };

@@ -61,14 +61,14 @@ class Inquirey extends Model
             $i++;
 //            
            
-           
-           if($row["status"] == 'open'){
-               $statushtml ='<span class="label label-info label-mini">Open</span>';
-               $actionHtml = '<button class="btn btn-warning btn-xs"><i class="fa fa-close"></i></button><br><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button><br><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>';
-           }else{
-               $statushtml ='<span class="label label-success  label-mini">Close</span>';
-               $actionHtml = '<button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button><br><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button><br><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>';
-           }
+          
+            if($row["status"] == 'open'){
+                 $statushtml ='<span class="label label-info label-mini">Open</span>';
+                 $actionHtml = '<button class="btn btn-warning btn-xs closeinquirey" data-toggle="modal" data-target="#closeinquireyModel" data-id="'.$row['id'].'"><i class="fa fa-close"></i></button><br><a href=""><button class="btn btn-primary btn-xs" data-id="'.$row['id'].'"><i class="fa fa-pencil"></i></button></a><br><button class="btn btn-danger btn-xs deleteinquirey" data-toggle="modal" data-target="#deleteModel" data-id="'.$row['id'].'" ><i class="fa fa-trash-o "></i></button>';
+             }else{
+                 $statushtml ='<span class="label label-success  label-mini">Close</span>';
+                 $actionHtml = '<button class="btn btn-warning btn-xs openinquirey" data-toggle="modal" data-target="#openinquireyModel"  data-id="'.$row["id"].'"><i class="fa fa-check"></i></button><br><a href=""><button class="btn btn-primary btn-xs" data-id="'.$row["id"].'"><i class="fa fa-pencil"></i></button></a><br><button class="btn btn-danger btn-xs deleteinquirey" data-toggle="modal" data-target="#deleteModel" data-id="'.$row["id"].'"><i class="fa fa-trash-o "></i></button>';
+             }
            
             $nestedData = array();
             $nestedData[] = $i;
@@ -154,13 +154,13 @@ class Inquirey extends Model
             $i++;
 //            
            
-           if($row["status"] == 'open'){
-               $statushtml ='<span class="label label-info label-mini">Open</span>';
-               $actionHtml = '<button class="btn btn-warning btn-xs"><i class="fa fa-close"></i></button><br><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button><br><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>';
-           }else{
-               $statushtml ='<span class="label label-success  label-mini">Close</span>';
-               $actionHtml = '<button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button><br><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button><br><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>';
-           }
+            if($row["status"] == 'open'){
+                $statushtml ='<span class="label label-info label-mini">Open</span>';
+                $actionHtml = '<button class="btn btn-warning btn-xs closeinquirey" data-toggle="modal" data-target="#closeinquireyModel" data-id="'.$row['id'].'"><i class="fa fa-close"></i></button><br><a href=""><button class="btn btn-primary btn-xs" data-id="'.$row['id'].'"><i class="fa fa-pencil"></i></button></a><br><button class="btn btn-danger btn-xs deleteinquirey" data-toggle="modal" data-target="#deleteModel" data-id="'.$row['id'].'" ><i class="fa fa-trash-o "></i></button>';
+            }else{
+                $statushtml ='<span class="label label-success  label-mini">Close</span>';
+                $actionHtml = '<button class="btn btn-warning btn-xs openinquirey" data-toggle="modal" data-target="#openinquireyModel"  data-id="'.$row["id"].'"><i class="fa fa-check"></i></button><br><a href=""><button class="btn btn-primary btn-xs" data-id="'.$row["id"].'"><i class="fa fa-pencil"></i></button></a><br><button class="btn btn-danger btn-xs deleteinquirey" data-toggle="modal" data-target="#deleteModel" data-id="'.$row["id"].'"><i class="fa fa-trash-o "></i></button>';
+            }
            
             $nestedData = array();
             $nestedData[] = $i;
@@ -189,5 +189,52 @@ class Inquirey extends Model
         
 
         return $json_data;
+    }
+    
+    public function addInquirey($request){
+        
+        $result = Inquirey::where("email",$request->input('email'))
+                    ->count();
+        if($result == 0){
+            $objaddinquirey =  new Inquirey();
+            $objaddinquirey->fname = $request->input('fname');
+            $objaddinquirey->lname = $request->input('lname');
+            $objaddinquirey->mobile = $request->input('mono');
+            $objaddinquirey->landline = $request->input('landline');
+            $objaddinquirey->companyname = $request->input('companyname');
+            $objaddinquirey->email = $request->input('email');
+            $objaddinquirey->inquirytime = $request->input('time');
+            $objaddinquirey->inquirydate = date("Y-m-d", strtotime($request->input('idate')));
+            $objaddinquirey->inquirysource = $request->input('isources');
+            $objaddinquirey->status = "open";
+            $objaddinquirey->created_at =  date("Y-m-d h:i:s");
+            $objaddinquirey->updated_at = date("Y-m-d h:i:s");
+            if($objaddinquirey->save()){
+                return "add";
+            }else{
+                return "wrong";
+            }
+        }else{
+            return "exits";
+        }
+        
+        
+    }
+    
+    public function closeinquirey($id){
+        $objInquirey = Inquirey::find($id);
+        $objInquirey->status = "close";
+        return $objInquirey->save();
+    }
+    
+    public function openinquirey($id){
+        $objInquirey = Inquirey::find($id);
+        $objInquirey->status = "open";
+        return $objInquirey->save();
+    }
+    
+    public function deleteinquirey($id){
+         $delete = Inquirey::where('id',$id)->delete();
+         return $delete;
     }
 }

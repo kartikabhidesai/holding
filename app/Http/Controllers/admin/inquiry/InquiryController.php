@@ -18,7 +18,7 @@ class InquiryController extends Controller
         $data['css'] = array();
         $data['plugincss'] = array('plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css');
         $data['pluginjs'] = array('plugins/datatables/jquery.dataTables.min.js','plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js');
-        $data['js'] = array('inquiry.js');
+        $data['js'] = array('inquiry.js','ajaxfileupload.js', 'jquery.form.min.js');
         $data['funinit'] = array('Inquiry.init()');
         $data['header'] = array(
             'title' => 'Inquiry List',
@@ -28,7 +28,28 @@ class InquiryController extends Controller
     }
     
     
-    public function add(){
+    public function add(Request $request){
+        if ($request->isMethod('post')) {
+            $objInquirey = new Inquirey();
+            $ret = $objInquirey->addInquirey($request);
+            if ($ret == "add") {
+                $return['status'] = 'success';
+                $return['message'] = 'Inquirey added successfully.';
+                $return['redirect'] = route('inquiry');
+            } 
+            if ($ret == "exits") {
+                $return['status'] = 'error';
+                $return['message'] = 'Cilent email address already exits.';
+            }
+            
+            if ($ret == "wrong") {
+                $return['status'] = 'error';
+                $return['message'] = 'something will be wrong.';
+            }
+            echo json_encode($return);
+            exit;
+        }
+        
         $data['inquireytime'] =  Config::get('constants.inquirey_time');
         $data['title'] = 'Add Inquiry | holding';
         $data['css'] = array();
@@ -75,6 +96,50 @@ class InquiryController extends Controller
                 $objInquirey = new Inquirey();
                 $compnyList = $objInquirey->getdatatableclose();
                 echo json_encode($compnyList);
+                break;
+            case 'closeinquirey':
+                
+                $objInquirey = new Inquirey();
+                $res = $objInquirey->closeinquirey($request->input('data')['id']);
+                if ($res == "add") {
+                    $return['status'] = 'success';
+                    $return['message'] = 'Inquirey closed successfully.';
+                    $return['redirect'] = route('inquiry');
+                }else{
+                    $return['status'] = 'error';
+                     $return['message'] = 'something will be wrong.';
+                }
+                echo json_encode($return);
+                break;
+                
+            case 'openinquirey':
+                
+                $objInquirey = new Inquirey();
+                $res = $objInquirey->openinquirey($request->input('data')['id']);
+                if ($res) {
+                    $return['status'] = 'success';
+                    $return['message'] = 'Inquirey open successfully.';
+                    $return['redirect'] = route('inquiry');
+                }else{
+                    $return['status'] = 'error';
+                     $return['message'] = 'something will be wrong.';
+                }
+                echo json_encode($return);
+                break;
+                
+            case 'deleteinquirey':
+                
+                $objInquirey = new Inquirey();
+                $res = $objInquirey->deleteinquirey($request->input('data')['id']);
+                if ($res) {
+                    $return['status'] = 'success';
+                    $return['message'] = 'Inquirey deleted successfully.';
+                    $return['redirect'] = route('inquiry');
+                }else{
+                    $return['status'] = 'error';
+                     $return['message'] = 'something will be wrong.';
+                }
+                echo json_encode($return);
                 break;
             
         }

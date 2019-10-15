@@ -9,6 +9,7 @@
             </div>
             <div class="card-body " id="bar-parent3">
                 <form id='addinquirey' class="" method="POST">
+                    {{ csrf_field() }}
                 <div class="form-group ">
                     <label class="control-label" >Cilent First Name </label>
                     <input type="text" class="form-control" name="fname" placeholder="Enter cilent first name">
@@ -29,6 +30,11 @@
                     <input type="text" class="form-control" name="landline" placeholder="Enter cilent landline number">
                 </div>
                 
+                <div class="form-group ">
+                    <label class="control-label" >Company Name</label>
+                    <input type="text" class="form-control" name="companyname" placeholder="Enter company name">
+                </div>
+                    
                 <div class="form-group ">
                     <label class="control-label" >Cilent's email address</label>
                     <input type="text" class="form-control" name="email" placeholder="Enter cilent email address">
