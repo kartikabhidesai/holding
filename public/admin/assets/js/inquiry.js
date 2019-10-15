@@ -77,14 +77,14 @@ var Inquiry = function() {
         
         $('body').on('click', '.yes-sure', function() {
             var id = $(this).attr('data-id');
-            var data = {id: id, _token: $('#_token').val()};
+            var data = {id: id, _token: $('#_token').val(), 'route':''};
             $.ajax({
                 type: "POST",
                 headers: {
                     'X-CSRF-TOKEN': $('input[name="_token"]').val(),
                 },
                 url: baseurl + "inquirey-ajaxAction",
-                data: {'action': 'deleteinquirey', 'data': data},
+                data: {'action': 'open-deleteinquirey', 'data': data},
                 success: function(data) {
                     handleAjaxResponse(data);
                 }
@@ -170,6 +170,7 @@ var Inquiry = function() {
             }, 500);
         });
         
+        
         $('body').on('click', '.yes-sure', function() {
             var id = $(this).attr('data-id');
             var data = {id: id, _token: $('#_token').val()};
@@ -179,7 +180,7 @@ var Inquiry = function() {
                     'X-CSRF-TOKEN': $('input[name="_token"]').val(),
                 },
                 url: baseurl + "inquirey-ajaxAction",
-                data: {'action': 'deleteinquirey', 'data': data},
+                data: {'action': 'close-deleteinquirey', 'data': data},
                 success: function(data) {
                     handleAjaxResponse(data);
                 }

@@ -104,7 +104,7 @@ class InquiryController extends Controller
                 if ($res == "add") {
                     $return['status'] = 'success';
                     $return['message'] = 'Inquirey closed successfully.';
-                    $return['redirect'] = route('inquiry');
+                    $return['redirect'] = route('close-inquiry');
                 }else{
                     $return['status'] = 'error';
                      $return['message'] = 'something will be wrong.';
@@ -127,7 +127,7 @@ class InquiryController extends Controller
                 echo json_encode($return);
                 break;
                 
-            case 'deleteinquirey':
+            case 'open-deleteinquirey':
                 
                 $objInquirey = new Inquirey();
                 $res = $objInquirey->deleteinquirey($request->input('data')['id']);
@@ -135,6 +135,20 @@ class InquiryController extends Controller
                     $return['status'] = 'success';
                     $return['message'] = 'Inquirey deleted successfully.';
                     $return['redirect'] = route('inquiry');
+                }else{
+                    $return['status'] = 'error';
+                     $return['message'] = 'something will be wrong.';
+                }
+                echo json_encode($return);
+                break;
+            case 'close-deleteinquirey':
+                
+                $objInquirey = new Inquirey();
+                $res = $objInquirey->deleteinquirey($request->input('data')['id']);
+                if ($res) {
+                    $return['status'] = 'success';
+                    $return['message'] = 'Inquirey deleted successfully.';
+                    $return['redirect'] = route('close-inquiry');
                 }else{
                     $return['status'] = 'error';
                      $return['message'] = 'something will be wrong.';
