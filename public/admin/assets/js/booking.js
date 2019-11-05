@@ -17,6 +17,29 @@ var Booking = function() {
         };
         getDataTable(arrList);
         
+        $('body').on("click",".deletehoarding",function(){
+            var val = $(this).attr("data-id"); 
+            setTimeout(function() {
+                $('.yes-sure:visible').attr('data-id', val);
+            }, 500);
+        });
+        
+        $('body').on('click', '.yes-sure', function() {
+            var id = $(this).attr('data-id');
+            var data = {id: id, _token: $('#_token').val()};
+            $.ajax({
+                type: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('input[name="_token"]').val(),
+                },
+                url: baseurl + "booking-ajaxAction",
+                data: {'action': 'deletebooking', 'data': data},
+                success: function(data) {
+                    handleAjaxResponse(data);
+                }
+            });
+        });
+        
     }
     var addhoarding = function(){
         
@@ -146,18 +169,18 @@ var Booking = function() {
         
         function customerInfoValid() {
 
-            var customValid = true;
+//            var customValid = true;
 
-            $('.hoardingImageclass').each(function () {
-                if ($(this).is(':visible')) {
-                    if ($(this).val() == '') {
-                        $(this).addClass('has-error');
-                        customValid = false;
-                    } else {
-                        $(this).removeClass('has-error');
-                    }
-                }
-            });
+//            $('.hoardingImageclass').each(function () {
+//                if ($(this).is(':visible')) {
+//                    if ($(this).val() == '') {
+//                        $(this).addClass('has-error');
+//                        customValid = false;
+//                    } else {
+//                        $(this).removeClass('has-error');
+//                    }
+//                }
+//            });
 
             return customValid;
         };

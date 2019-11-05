@@ -7,7 +7,7 @@ $items = Session::get('logindata');
         <div class="page-logo">
             <a href="{{ route('dashboard') }}">
                 <img alt="" src="{{ url('public/admin/assets/img/logo.png') }}">
-                <span class="logo-default" >Spice</span> </a>
+                <span class="logo-default" >Hoading</span> </a>
         </div>
         <!-- logo end -->
         <ul class="nav navbar-nav navbar-left in">

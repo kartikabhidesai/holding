@@ -69,7 +69,7 @@ class BookingController extends Controller
     public function edit(Request $request,$id){
         if ($request->isMethod('post')) {
                 $objBooking = new Booking();
-                $res = $objBooking->addHoarding($request);
+                $res = $objBooking->EditHoarding($request, $id);
                 if ($res == "add") {
                     $return['status'] = 'success';
                     $return['message'] = 'Hoarding added successfully.';
@@ -115,6 +115,20 @@ class BookingController extends Controller
                 $objBooking = new Booking();
                 $bookingList = $objBooking->getdatatable();
                 echo json_encode($bookingList);
+                break;
+            
+            case 'deletebooking':
+                $objBooking = new Booking();
+                $res = $objBooking->deletebooking($request->input('data')['id']);
+                if ($res) {
+                    $return['status'] = 'success';
+                    $return['message'] = 'Booking deleted successfully.';
+                    $return['redirect'] = route('booking');
+                }else{
+                    $return['status'] = 'error';
+                     $return['message'] = 'something will be wrong.';
+                }
+                echo json_encode($return);
                 break;
         }
     }

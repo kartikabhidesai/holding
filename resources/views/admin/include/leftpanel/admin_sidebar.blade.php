@@ -62,7 +62,7 @@ $items = Session::get('logindata');
                 </li>
                                 
                 
-                <li class="nav-item start {{ ($currRoute == 'booking')  ? 'active' : '' }}">
+                <li class="nav-item start {{ ($currRoute == 'booking' || $currRoute == 'add-hoarding' || $currRoute == 'edit-hoarding' )  ? 'active' : '' }}">
                     <a href="{{ route('booking') }}" class="nav-link nav-toggle">
                         <i class="fa fa-list" ></i>
                         <span class="title">Booking</span>

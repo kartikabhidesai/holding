@@ -38,7 +38,6 @@ class Vender extends Model{
         $name = '';
         $objVender = Vender::find($id);
         if($request->file()){
-           
             $existImage = public_path('/uploads/profile/').$objVender->profile;
             if (File::exists($existImage)) { // unlink or remove previous company image from folder
                 File::delete($existImage);
