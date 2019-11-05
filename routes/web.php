@@ -28,6 +28,9 @@
         Route::match(['get', 'post'], 'dashboard', ['as' => 'dashboard', 'uses' => 'admin\dashboard\DashboardController@dashboard']);
         
         Route::match(['get', 'post'], 'booking', ['as' => 'booking', 'uses' => 'admin\booking\BookingController@index']);
+        Route::match(['get', 'post'], 'add-hoarding', ['as' => 'add-hoarding', 'uses' => 'admin\booking\BookingController@add']);
+        Route::match(['get', 'post'], 'edit-hoarding/{id}', ['as' => 'edit-hoarding', 'uses' => 'admin\booking\BookingController@edit']);
+        Route::match(['get', 'post'], 'booking-ajaxAction', ['as' => 'booking-ajaxAction', 'uses' => 'admin\booking\BookingController@ajaxAction']);
         
         Route::match(['get', 'post'], 'inquiry', ['as' => 'inquiry', 'uses' => 'admin\inquiry\InquiryController@index']);
         Route::match(['get', 'post'], 'add-inquiry', ['as' => 'add-inquiry', 'uses' => 'admin\inquiry\InquiryController@add']);

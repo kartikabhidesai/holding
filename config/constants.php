@@ -17,6 +17,14 @@ return [
         '4' => 'Next Month',
     ],
     
+    'hoarding_type' => [
+        '' => 'Select Hoarding Type',
+        '1' => 'Back Lit ',
+        '2' => 'Front Lit',
+        '3' => 'Gantry',
+        '4' => 'Building Wrap',
+    ],
+    
 ];
 
 

@@ -12,7 +12,7 @@
                                 <span class="info-box-icon push-bottom"><i class="material-icons">style</i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Inquiry</span>
-                                    <span class="info-box-number">450</span>
+                                    <span class="info-box-number">{{ $noofopeninquirey }}</span>
                                     <div class="progress">
                                         <div class="progress-bar width-100"></div>
                                     </div>

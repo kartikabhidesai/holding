@@ -271,5 +271,11 @@ class Inquirey extends Model {
                 ->get();
         return $result;
     }
+    
+    public function totalinquirey(){
+        $result = Inquirey::where("status","open")
+                    ->count();
+        return $result;
+    }
 
 }

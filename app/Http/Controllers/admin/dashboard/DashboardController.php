@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin\dashboard;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Model\Inquirey;
 use Session;
 use Auth;
 use Route;
@@ -15,7 +16,9 @@ class DashboardController extends Controller
 //        parent::__construct();
         $this->middleware('admin');
     }
-    public function dashboard(Request $request){        
+    public function dashboard(Request $request){      
+        $objInquirey = new Inquirey();
+        $data['noofopeninquirey'] = $objInquirey->totalinquirey();
         $session = $request->session()->all();
         $items = Session::get('logindata')[0];
         $data['title'] = 'Admin Dashboard | holding';
