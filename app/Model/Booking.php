@@ -75,6 +75,7 @@ class Booking extends Model {
                                     <button class="btn btn-danger btn-xs deletehoarding" data-toggle="modal" data-target="#deleteModel" data-id="' . $row['id'] . '">
                                         <i class="fa fa-trash-o"></i>
                                     </button>';
+            $image = '<img class="img-responsive" src="'.url("public/uploads/hoarding/".$row["imagename"]).'" alt="hoarding">';
             if ($row["status"] == 'Available') {
                 $statushtml = '<span class="label label-info label-mini">Available</span>';
             } else {
@@ -84,7 +85,7 @@ class Booking extends Model {
             $nestedData = array();
             $nestedData[] = $i;
             $nestedData[] = $checkbox;
-            $nestedData[] = $row["imagename"];
+            $nestedData[] = $image;
             $nestedData[] = $row["location"];
             $nestedData[] = date("d-m-Y", strtotime($row["startdate"]));
             $nestedData[] = date("d-m-Y", strtotime($row["enddate"]));
