@@ -40,9 +40,12 @@
                     <tbody>
                     </tbody>
                 </table>
+                <div class="pull-right" >
+                    <button class="btn btn-primary share"><i class="fa fa-whatsapp" aria-hidden="true"></i> Share</button>
+                    <button class="btn btn-info share"><i class="fa fa-envelope" aria-hidden="true"></i> Share</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

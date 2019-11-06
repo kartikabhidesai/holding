@@ -117,6 +117,20 @@ class BookingController extends Controller
                 echo json_encode($bookingList);
                 break;
             
+            case 'getdata':
+                $objBooking = new Booking();
+                $booking = $objBooking->getdata($request['data']);
+                if ($booking != "") {
+                    $return['status'] = 'success';
+                    $return['message'] = 'Booking share successfully.';
+                    $return['redirect'] = route('booking');
+                }else{
+                    $return['status'] = 'error';
+                    $return['message'] = 'something will be wrong.';
+                }
+                return json_encode($return);
+                break;
+            
             case 'deletebooking':
                 $objBooking = new Booking();
                 $res = $objBooking->deletebooking($request->input('data')['id']);

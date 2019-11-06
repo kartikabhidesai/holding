@@ -68,14 +68,14 @@ class Booking extends Model {
 
         foreach ($resultArr as $row) {
             $i++;
-            $checkbox = "<input type='checkbox' name='hoardingid[]' > ";
+            $checkbox = '<input type="checkbox" name="hoardingid[]" value="' . $row['id'] . '">';
             $actionHtml = '<a href="' . route('edit-hoarding', $row['id']) . '" ><button class="btn btn-primary btn-xs">
                                        <i class="fa fa-pencil"></i>
                                     </button></a>
                                     <button class="btn btn-danger btn-xs deletehoarding" data-toggle="modal" data-target="#deleteModel" data-id="' . $row['id'] . '">
                                         <i class="fa fa-trash-o"></i>
                                     </button>';
-            $image = '<img class="img-responsive" src="'.url("public/uploads/hoarding/".$row["imagename"]).'" alt="hoarding">';
+            $image = '<img class="img-responsive" src="' . url("public/uploads/hoarding/" . $row["imagename"]) . '" alt="hoarding">';
             if ($row["status"] == 'Available') {
                 $statushtml = '<span class="label label-info label-mini">Available</span>';
             } else {
@@ -158,14 +158,15 @@ class Booking extends Model {
                 ->where('id', '!=', $id)
                 ->count();
         if ($result == 0) {
+            Booking::where('id', '=', $id)->delete();
             $objBooking = new Booking();
+            $objBooking->id = $id;
             $objBooking->location = $request->input('location');
             $objBooking->startdate = date("Y-m-d", strtotime($request->input('startdate')));
             $objBooking->enddate = date("Y-m-d", strtotime($request->input('enddate')));
             $objBooking->status = $request->input('status');
             $objBooking->type = $request->input('type');
             $objBooking->budget = $request->input('budget');
-            $objBooking->cart = 0;
             if ($objBooking->save()) {
                 $bookingid = $objBooking->id;
                 if ($request->file()) {
@@ -192,7 +193,7 @@ class Booking extends Model {
                             ->where('hoadingid', $id)
                             ->update(['hoadingid' => $bookingid]);
                 }
-                Booking::where('id', '=', $id)->delete();
+                
                 return "add";
             } else {
                 return "wrong";
@@ -200,6 +201,25 @@ class Booking extends Model {
         } else {
             return "exits";
         }
+    }
+
+    public function getdata($data) {
+        $result = [];
+        for ($i = 0; $i < sizeof($data['id']); $i++) {
+
+            $query = Booking::from('hoadingmaster')
+                    ->leftjoin("hoadingimages", "hoadingimages.hoadingid", "=", "hoadingmaster.id")
+                    ->where('hoadingmaster.id', $data['id'][$i])
+                    ->select("*")
+                    ->get()
+                    ->toArray();
+            $cart = $query[0]['cart'];
+            DB::table('hoadingmaster')
+                    ->where('id', $data['id'][$i])
+                    ->update(['cart' => ($cart+1)]);
+            array_push($result, $query[0]);
+        }
+        return $result;
     }
 
     public function gethoardingdetails($id) {
@@ -218,4 +238,5 @@ class Booking extends Model {
         DB::table('hoadingimages')->where('hoadingid', $id)->delete();
         return $delete;
     }
+
 }
