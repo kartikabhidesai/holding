@@ -124,9 +124,10 @@ class Booking extends Model {
             if ($objBooking->save()) {
                 $bookingid = $objBooking->id;
                 if ($request->file()) {
+                    
                     $totalimage = count(($request->file('hoarding')));
                     for ($i = 0; $i < $totalimage; $i++) {
-
+                        
                         $name = '';
                         $image = $request->file('hoarding')[$i];
                         $name = 'hoarding' . time() . $i . '.' . $image->getClientOriginalExtension();
@@ -170,6 +171,7 @@ class Booking extends Model {
             if ($objBooking->save()) {
                 $bookingid = $objBooking->id;
                 if ($request->file()) {
+                    DB::table('hoadingimages')->where('hoadingid', $id)->delete();
                     $totalimage = count(($request->file('hoarding')));
                     for ($i = 0; $i < $totalimage; $i++) {
 
@@ -188,12 +190,7 @@ class Booking extends Model {
                         $objHordingimages->imagename = $name;
                         $objHordingimages->save();
                     }
-                } else {
-                    DB::table('hoadingimages')
-                            ->where('hoadingid', $id)
-                            ->update(['hoadingid' => $bookingid]);
-                }
-                
+                } 
                 return "add";
             } else {
                 return "wrong";
