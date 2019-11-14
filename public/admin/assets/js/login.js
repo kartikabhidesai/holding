@@ -12,6 +12,7 @@ var Login = function () {
         handleFormValidate(form, rules, function (form) {
             handleAjaxFormSubmit(form);
         });
+        
         $('#loginform').validate({
             rules: {
                 email: {required: true, email: true},

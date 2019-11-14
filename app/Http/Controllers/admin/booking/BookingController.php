@@ -73,7 +73,7 @@ class BookingController extends Controller {
             $res = $objBooking->EditHoarding($request, $id);
             if ($res == "add") {
                 $return['status'] = 'success';
-                $return['message'] = 'Hoarding added successfully.';
+                $return['message'] = 'Hoarding Edited successfully.';
                 $return['redirect'] = route('booking');
             }
             if ($res == "exits") {
@@ -137,7 +137,7 @@ class BookingController extends Controller {
                 $res = $objBooking->deletebooking($request->input('data')['id']);
                 if ($res) {
                     $return['status'] = 'success';
-                    $return['message'] = 'Booking deleted successfully.';
+                    $return['message'] = 'Booking Deleted successfully.';
                     $return['redirect'] = route('booking');
                 } else {
                     $return['status'] = 'error';

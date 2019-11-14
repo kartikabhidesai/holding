@@ -12,6 +12,7 @@ class Booking extends Model {
     protected $table = 'hoadingmaster';
 
     public function getdatatable() {
+
         $requestData = $_REQUEST;
 
         $columns = array(

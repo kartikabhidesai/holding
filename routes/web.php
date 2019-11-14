@@ -26,6 +26,7 @@
     $adminPrefix = "";
     Route::group(['prefix' => $adminPrefix, 'middleware' => ['admin']], function() {
         Route::match(['get', 'post'], 'dashboard', ['as' => 'dashboard', 'uses' => 'admin\dashboard\DashboardController@dashboard']);
+        Route::match(['get', 'post'], 'dashboard-ajaxAction', ['as' => 'dashboard-ajaxAction', 'uses' => 'admin\dashboard\DashboardController@ajaxAction']);
         
         Route::match(['get', 'post'], 'booking', ['as' => 'booking', 'uses' => 'admin\booking\BookingController@index']);
         Route::match(['get', 'post'], 'add-hoarding', ['as' => 'add-hoarding', 'uses' => 'admin\booking\BookingController@add']);
