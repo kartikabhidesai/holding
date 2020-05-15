@@ -72,11 +72,17 @@ var Booking = function () {
         var validateTrip = true;
         $('#addnewhoarding').validate({
             rules: {
+                code: {required: true},
+                landmark: {required: true},
+                area: {required: true},
                 location: {required: true},
                 startdate: {required: true},
                 enddate: {required: true},
                 status: {required: true},
                 type: {required: true},
+                budget: {required: true},
+                size: {required: true},
+                width: {required: true},
             },
             invalidHandler: function (event, validator) {
                 validateTrip = false;
@@ -153,11 +159,17 @@ var Booking = function () {
         var validateTrip = true;
         $('#editnewhoarding').validate({
             rules: {
+                code: {required: true},
+                landmark: {required: true},
+                area: {required: true},
                 location: {required: true},
                 startdate: {required: true},
                 enddate: {required: true},
                 status: {required: true},
                 type: {required: true},
+                budget: {required: true},
+                size: {required: true},
+                width: {required: true},
             },
             invalidHandler: function (event, validator) {
                 validateTrip = false;
