@@ -27,6 +27,8 @@
                             <th>No</th>
                             <th>Check</th>
                             <th>Images</th>
+                            <th>Landmark</th>                            
+                            <th>Area</th>                            
                             <th>Location</th>                            
                             <th>Start Date</th>
                             <th>End Date</th>

@@ -17,8 +17,10 @@ class Booking extends Model {
 
         $columns = array(
             // datatable column index  => database column name
-            1 => 'hoadingmaster.id',
-            0 => 'hoadingmaster.location',
+            0 => 'hoadingmaster.id',
+            1 => 'hoadingmaster.landmark',
+            1 => 'hoadingmaster.area',
+            1 => 'hoadingmaster.location',
             2 => 'hoadingmaster.startdate',
             3 => 'hoadingmaster.enddate',
             4 => 'hoadingmaster.status',
@@ -26,6 +28,8 @@ class Booking extends Model {
             6 => 'hoadingmaster.email',
             7 => 'hoadingmaster.budget',
             8 => 'hoadingmaster.cart',
+            8 => 'hoadingmaster.size',
+            8 => 'hoadingmaster.width',
             9 => 'hoadingimages.hoadingid',
         );
 
@@ -87,6 +91,8 @@ class Booking extends Model {
             $nestedData[] = $i;
             $nestedData[] = $checkbox;
             $nestedData[] = $image;
+            $nestedData[] = $row["landmark"];
+            $nestedData[] = $row["area"];
             $nestedData[] = $row["location"];
             $nestedData[] = date("d-m-Y", strtotime($row["startdate"]));
             $nestedData[] = date("d-m-Y", strtotime($row["enddate"]));
@@ -94,7 +100,7 @@ class Booking extends Model {
             $nestedData[] = $type[$row["type"]];
             $nestedData[] = '<i class="fa fa-inr"></i> ' . $row["budget"];
             $nestedData[] = $row["cart"];
-            $nestedData[] = $row["size"];
+            $nestedData[] = $row["size"].' * '.$row["width"];
             $nestedData[] = $actionHtml;
             $data[] = $nestedData;
         }
@@ -113,9 +119,14 @@ class Booking extends Model {
 //          print_r($request->file());
 //          die();
         $result = Booking::where("location", $request->input('location'))
+                ->where("landmark", $request->input('landmark'))
+                ->where("area", $request->input('area'))
                 ->count();
         if ($result == 0) {
             $objBooking = new Booking();
+            $objBooking->code = $request->input('code');
+            $objBooking->landmark = $request->input('landmark');
+            $objBooking->area = $request->input('area');
             $objBooking->location = $request->input('location');
             $objBooking->startdate = date("Y-m-d", strtotime($request->input('startdate')));
             $objBooking->enddate = date("Y-m-d", strtotime($request->input('enddate')));
@@ -123,6 +134,7 @@ class Booking extends Model {
             $objBooking->type = $request->input('type');
             $objBooking->budget = $request->input('budget');
             $objBooking->size = $request->input('size');
+            $objBooking->width = $request->input('width');
             $objBooking->cart = 0;
             if ($objBooking->save()) {
                 $bookingid = $objBooking->id;
@@ -159,12 +171,17 @@ class Booking extends Model {
     public function EditHoarding($request, $id) {
 
         $result = Booking::where("location", $request->input('location'))
+                ->where("landmark", $request->input('landmark'))
+                ->where("area", $request->input('area'))
                 ->where('id', '!=', $id)
                 ->count();
         if ($result == 0) {
             Booking::where('id', '=', $id)->delete();
             $objBooking = new Booking();
             $objBooking->id = $id;
+            $objBooking->code = $request->input('code');
+            $objBooking->landmark = $request->input('landmark');
+            $objBooking->area = $request->input('area');
             $objBooking->location = $request->input('location');
             $objBooking->startdate = date("Y-m-d", strtotime($request->input('startdate')));
             $objBooking->enddate = date("Y-m-d", strtotime($request->input('enddate')));
@@ -172,6 +189,7 @@ class Booking extends Model {
             $objBooking->type = $request->input('type');
             $objBooking->budget = $request->input('budget');
             $objBooking->size = $request->input('size');
+            $objBooking->width = $request->input('width');
             if ($objBooking->save()) {
                 $bookingid = $objBooking->id;
                 if ($request->file()) {

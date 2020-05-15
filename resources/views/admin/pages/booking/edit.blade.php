@@ -13,7 +13,19 @@
                 <form id='editnewhoarding' class="" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group ">
-                        <label class="control-label" >Location</label>
+                        <label class="control-label" >Code / Serial</label>
+                        <input type="text" class="form-control" name="code" placeholder="Enter Hoarding Code / Serial Number" value="{{ $result->code }}">
+                               </div>
+                               <div class="form-group ">
+                               <label class="control-label" >Landmark</label>
+                        <input type="text" class="form-control" name="landmark" placeholder="Enter Hoarding Landmark" value="{{ $result->landmark }}">
+                               </div>
+                               <div class="form-group ">
+                               <label class="control-label" >Area</label>
+                        <input type="text" class="form-control" name="area" placeholder="Enter Hoarding Area" value="{{ $result->area }}">
+                               </div>
+                               <div class="form-group ">
+                               <label class="control-label" >Location</label>
                         <input type="text" class="form-control" name="location" placeholder="Enter hoarding location" value="{{ $result->location }}">
                     </div>
 
@@ -51,8 +63,12 @@
                         <input type="text" class="form-control" name="budget" placeholder="Enter hoarding budget" value='{{ $result->budget }}'>
                     </div>  
                     <div class="form-group ">
-                        <label class="control-label" >Hoarding Size</label>
-                        <input type="text" class="form-control" name="size" placeholder="Enter hoarding size" value='{{ $result->size }}'>
+                        <label class="control-label" >Hoarding Height</label>
+                        <input type="text" class="form-control" name="size" placeholder="Enter hoarding Height" value='{{ $result->size }}'>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label" >Hoarding Width</label>
+                        <input type="text" class="form-control" name="width" placeholder="Enter Hoarding Width" value='{{ $result->width }}'>
                     </div>
                     <div class="form-group addimagesdiv">
                         <label class="control-label" >Hoarding Images </label>

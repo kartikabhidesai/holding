@@ -11,8 +11,20 @@
                 <form id='addnewhoarding' class="" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                 <div class="form-group ">
+                    <label class="control-label" >Code / Serial</label>
+                    <input type="text" class="form-control" name="code" placeholder="Enter Hoarding Code / Serial Number">
+                </div>
+                <div class="form-group ">
+                    <label class="control-label" >Landmark</label>
+                    <input type="text" class="form-control" name="landmark" placeholder="Enter Hoarding Lsandmark">
+                </div>
+                <div class="form-group ">
+                    <label class="control-label" >Area</label>
+                    <input type="text" class="form-control" name="area" placeholder="Enter Hoarding Area">
+                </div>
+                <div class="form-group ">
                     <label class="control-label" >Location</label>
-                    <input type="text" class="form-control" name="location" placeholder="Enter hoarding location">
+                    <input type="text" class="form-control" name="location" placeholder="Enter Hoarding Location">
                 </div>
                 
                 <div class="form-group ">
@@ -49,8 +61,12 @@
                     <input type="text" class="form-control" name="budget" placeholder="Enter hoarding budget">
                 </div>  
                 <div class="form-group ">
-                    <label class="control-label" >Hoarding Size</label>
-                    <input type="text" class="form-control" name="size" placeholder="Enter hoarding size">
+                    <label class="control-label" >Hoarding Height</label>
+                    <input type="text" class="form-control" name="size" placeholder="Enter hoarding Height">
+                </div>  
+                <div class="form-group ">
+                    <label class="control-label" >Hoarding Width</label>
+                    <input type="text" class="form-control" name="width" placeholder="Enter Hoarding Width">
                 </div>  
                 <div class="form-group addimagesdiv">
                     <label class="control-label" >Hoarding Images </label>
