@@ -50,14 +50,18 @@
                         <label class="control-label" >Hoarding Budget</label>
                         <input type="text" class="form-control" name="budget" placeholder="Enter hoarding budget" value='{{ $result->budget }}'>
                     </div>  
+                    <div class="form-group ">
+                        <label class="control-label" >Hoarding Size</label>
+                        <input type="text" class="form-control" name="size" placeholder="Enter hoarding size" value='{{ $result->size }}'>
+                    </div>
                     <div class="form-group addimagesdiv">
                         <label class="control-label" >Hoarding Images </label>
                         <div class='row'>
-                        @for($i=0; $i < count($hoardingdetails);$i++)
-                        <div class="margin-right-10 margin-top-10">
-                            <img height="100px" width="100px" src="{{ url('/public/uploads/hoarding/'.$hoardingdetails[$i]->imagename) }}" alt="product Image" value="{{ $hoardingdetails[$i]->imagename }}">
-                        </div>
-                        @endfor
+                            @for($i=0; $i < count($hoardingdetails);$i++)
+                            <div class="margin-right-10 margin-top-10">
+                                <img height="100px" width="100px" src="{{ url('/public/uploads/hoarding/'.$hoardingdetails[$i]->imagename) }}" alt="product Image" value="{{ $hoardingdetails[$i]->imagename }}">
+                            </div>
+                            @endfor
                         </div>
                         <br>
                         <div class="row ">                        

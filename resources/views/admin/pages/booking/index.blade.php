@@ -34,6 +34,7 @@
                             <th>Type</th>
                             <th>Budget</th>           
                             <th>Cart</th>           
+                            <th>Size</th>           
                             <th>Action</th>                            
                         </tr>
                     </thead>

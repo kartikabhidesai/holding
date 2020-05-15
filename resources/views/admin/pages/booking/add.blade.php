@@ -48,6 +48,10 @@
                     <label class="control-label" >Hoarding Budget</label>
                     <input type="text" class="form-control" name="budget" placeholder="Enter hoarding budget">
                 </div>  
+                <div class="form-group ">
+                    <label class="control-label" >Hoarding Size</label>
+                    <input type="text" class="form-control" name="size" placeholder="Enter hoarding size">
+                </div>  
                 <div class="form-group addimagesdiv">
                     <label class="control-label" >Hoarding Images </label>
                     <div class="row ">

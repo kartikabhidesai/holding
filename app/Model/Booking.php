@@ -94,6 +94,7 @@ class Booking extends Model {
             $nestedData[] = $type[$row["type"]];
             $nestedData[] = '<i class="fa fa-inr"></i> ' . $row["budget"];
             $nestedData[] = $row["cart"];
+            $nestedData[] = $row["size"];
             $nestedData[] = $actionHtml;
             $data[] = $nestedData;
         }
@@ -121,6 +122,7 @@ class Booking extends Model {
             $objBooking->status = $request->input('status');
             $objBooking->type = $request->input('type');
             $objBooking->budget = $request->input('budget');
+            $objBooking->size = $request->input('size');
             $objBooking->cart = 0;
             if ($objBooking->save()) {
                 $bookingid = $objBooking->id;
@@ -169,6 +171,7 @@ class Booking extends Model {
             $objBooking->status = $request->input('status');
             $objBooking->type = $request->input('type');
             $objBooking->budget = $request->input('budget');
+            $objBooking->size = $request->input('size');
             if ($objBooking->save()) {
                 $bookingid = $objBooking->id;
                 if ($request->file()) {
