@@ -27,6 +27,7 @@
                             <th>No</th>
                             <th>Check</th>
                             <th>Images</th>
+                            <th>Code</th>
                             <th>Landmark</th>                            
                             <th>Area</th>                            
                             <th>Location</th>                            

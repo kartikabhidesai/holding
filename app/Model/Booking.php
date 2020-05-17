@@ -91,6 +91,7 @@ class Booking extends Model {
             $nestedData[] = $i;
             $nestedData[] = $checkbox;
             $nestedData[] = $image;
+            $nestedData[] = $row["code"];
             $nestedData[] = $row["landmark"];
             $nestedData[] = $row["area"];
             $nestedData[] = $row["location"];
@@ -119,6 +120,7 @@ class Booking extends Model {
 //          print_r($request->file());
 //          die();
         $result = Booking::where("location", $request->input('location'))
+                ->where("code", $request->input('code'))
                 ->where("landmark", $request->input('landmark'))
                 ->where("area", $request->input('area'))
                 ->count();
@@ -171,6 +173,7 @@ class Booking extends Model {
     public function EditHoarding($request, $id) {
 
         $result = Booking::where("location", $request->input('location'))
+                ->where("code", $request->input('code'))
                 ->where("landmark", $request->input('landmark'))
                 ->where("area", $request->input('area'))
                 ->where('id', '!=', $id)
